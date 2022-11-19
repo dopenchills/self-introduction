@@ -1,0 +1,74 @@
+@use '../base';
+
+#display {
+  width: 100vw;
+  height: 100vh;
+
+  // prevent scrolling
+  overflow: hidden;
+}
+
+#whole-container {
+  // size
+  width: 90%;
+  height: 100%;
+
+  // position
+  margin: 0 5%;
+
+  // flexbox-parent
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 0;
+}
+
+#upper-container {
+  // flexbox-children
+  flex-basis: content;
+
+  // flexbox-parent
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  gap: 0;
+
+  .flex-item {
+    flex-basis: content;
+  }
+}
+
+#lower-container {
+  // size
+  height: 100vh;
+
+  // flexbox-parent
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  gap: 0;
+
+  .flex-item-main {
+    flex-grow: 4;
+  }
+
+  .flex-item-menu {
+    flex-grow: 1;
+  }
+}
+
+#preference-icon-list {
+  // flexbox-children
+  flex-basis: content;
+
+}
+
