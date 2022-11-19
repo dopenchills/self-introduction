@@ -1,3 +1,13 @@
-.preference-icon {
+.preference-icon-item {
+  display: inline-block;
+  list-style: none;
+}
 
+.preference-icon {
+  // size
+  width: 2em;
+  height: 2em;
+
+  // position
+  margin-left: 0.5em;
 }
