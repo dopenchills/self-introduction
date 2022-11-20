@@ -6,10 +6,10 @@ const MenuOption = (props: {className?: string, name?: string, value: string, la
   const label = props.label  || props.value
   const id    = `${name}-${props.value}`
   return (
-    <>
+    <div className={`menu-option ${props.className}`}>
       <input type="radio" name={name} value={props.value} id={id} />
       <label htmlFor={id}>{label}</label>
-    </>
+    </div>
   )
 }
 
