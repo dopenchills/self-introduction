@@ -52,18 +52,22 @@
   // flexbox-parent
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
   align-content: space-between;
   gap: 0;
 
   .flex-item-main {
-    flex-grow: 4;
+    min-width: 60%;
+
+    margin-top: 2em;
+    margin-right: 2em;
   }
 
   .flex-item-menu {
-    flex-grow: 1;
+    min-width: 10%;
+    flex-shrink: 0;
   }
 }
 
