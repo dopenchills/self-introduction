@@ -2,9 +2,11 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import './index.scss'
 
+// components
 import MyConciseIntroduction from "../components/MyConciseIntroduction"
 import PreferenceIconList from "../components/PreferenceIconList"
 import MenuList from "../components/MenuList"
+import ContentsContainer from "../components/ContentsContainer"
 
 const UpperContainer = (): JSX.Element => {
   return (
@@ -18,9 +20,7 @@ const UpperContainer = (): JSX.Element => {
 const LowerContainer = (): JSX.Element => {
   return (
     <div id="lower-container">
-      <main className="flex-item-main">
-        content-container
-      </main>
+      <ContentsContainer className="flex-item-main" />
       <MenuList className="flex-item-menu" />
     </div>
   )
