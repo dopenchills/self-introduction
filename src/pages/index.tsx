@@ -5,15 +5,18 @@ import './index.scss'
 // components
 import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
+import Preferences from "../components/Preferences"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div id="display">
-      <div id="whole-container">
-        <UpperContainer />
-        <LowerContainer />
+    <Preferences>
+      <div id="display">
+        <div id="whole-container">
+          <UpperContainer />
+          <LowerContainer />
+        </div>
       </div>
-    </div>
+    </Preferences>
   )
 }
 
