@@ -7,7 +7,7 @@ const MenuOption = (props: {className?: string, name?: string, value: string, la
   const id    = `${name}-${props.value}`
   return (
     <div className={`menu-option ${props.className}`}>
-      <input type="radio" name={name} value={props.value} id={id} checked={props.checked} />
+      <input type="radio" name={name} value={props.value} id={id} checked={props.checked} readOnly={true} />
       <label htmlFor={id}>{label}</label>
     </div>
   )
@@ -24,9 +24,9 @@ const MenuList = (props: {className?: string, value?: string, onMenuListChange: 
   ]
   const menuOptions = menuOptionValues.map(value => {
     if (value === checkedValue) {
-      return <MenuOption className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} />
+      return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} />
     }
-    return <MenuOption className="flex-item" name="menu" value={value} label={value.toUpperCase()} />
+    return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={false} />
 
   })
 
