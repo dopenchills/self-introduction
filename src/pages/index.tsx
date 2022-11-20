@@ -6,6 +6,7 @@ import './index.scss'
 import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
 import Preferences from "../components/Preferences"
+import BackgroundSvg from "../components/BackgroundSvg"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -15,6 +16,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <UpperContainer />
           <LowerContainer />
         </div>
+        <BackgroundSvg className="background" />
       </div>
     </Preferences>
   )

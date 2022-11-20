@@ -6,6 +6,8 @@
 
   // prevent scrolling
   overflow: hidden;
+
+  position: relative;
 }
 
 #whole-container {
@@ -14,8 +16,12 @@
   height: 100%;
 
   // position
-  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: auto;
+  padding: 1em 0;
 
   // flexbox-parent
   display: flex;
@@ -81,3 +87,9 @@
 
 }
 
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
