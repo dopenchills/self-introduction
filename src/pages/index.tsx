@@ -4,6 +4,7 @@ import './index.scss'
 
 import MyConciseIntroduction from "../components/MyConciseIntroduction"
 import PreferenceIconList from "../components/PreferenceIconList"
+import MenuList from "../components/MenuList"
 
 const UpperContainer = (): JSX.Element => {
   return (
@@ -20,9 +21,7 @@ const LowerContainer = (): JSX.Element => {
       <main className="flex-item-main">
         content-container
       </main>
-      <div className="flex-item-menu">
-        menu-list
-      </div>
+      <MenuList className="flex-item-menu" />
     </div>
   )
 }
