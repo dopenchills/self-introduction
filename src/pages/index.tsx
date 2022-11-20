@@ -3,28 +3,8 @@ import type { HeadFC, PageProps } from "gatsby"
 import './index.scss'
 
 // components
-import MyConciseIntroduction from "../components/MyConciseIntroduction"
-import PreferenceIconList from "../components/PreferenceIconList"
-import MenuList from "../components/MenuList"
-import ContentsContainer from "../components/ContentsContainer"
-
-const UpperContainer = (): JSX.Element => {
-  return (
-    <header id="upper-container">
-      <MyConciseIntroduction className="flex-item" />
-      <PreferenceIconList className="flex-item" />
-    </header>
-  )
-}
-
-const LowerContainer = (): JSX.Element => {
-  return (
-    <div id="lower-container">
-      <ContentsContainer className="flex-item-main" />
-      <MenuList className="flex-item-menu" />
-    </div>
-  )
-}
+import LowerContainer from "../components/LowerContainer"
+import UpperContainer from "../components/UpperContainer"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
