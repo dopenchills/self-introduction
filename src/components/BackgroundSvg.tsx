@@ -1,9 +1,16 @@
 import * as React from "react"
+import { CSSTransition } from "react-transition-group"
+import { useRef } from 'react';
+
+// svg
 import Background from '-!svg-react-loader?name=Background!../assets/Background.svg'
 import CloudBig from '-!svg-react-loader?name=Background!../assets/CloudBig.svg'
 import CloudMedium from '-!svg-react-loader?name=Background!../assets/CloudMedium.svg'
 import CloudSmall from '-!svg-react-loader?name=Background!../assets/CloudSmall.svg'
+
+// scss
 import './BackgroundSvg.scss'
+
 
 const BackgroundSvg = (props: {className?: string}): JSX.Element => {
   const [windowSize, setWindowSize] = React.useState({width: window.innerWidth, height: window.innerHeight})
@@ -27,11 +34,25 @@ const BackgroundSvg = (props: {className?: string}): JSX.Element => {
   const verticalOffsetMargin = 5  // in order to hide white area under the svg
   const verticalOffset   = windowSize.height - svgRenderHeight + verticalOffsetMargin
 
+  // for animation
+  const nodeRef = useRef(null)
+  const [inProp, setInProp] = React.useState(false)
+  React.useEffect(() => {
+    setInProp(true)
+  }, [])
   return (
     <div className={`background-div ${props.className}`}>
-      <CloudBig className="cloud cloud-big" width={300} height={100} style={{top: Math.random() / 2 * windowSize.height}} />
-      <CloudMedium className="cloud cloud-medium" width={200} height={100} style={{top: Math.random() / 2 * windowSize.height}}  />
-      <CloudSmall className="cloud cloud-small" width={100} height={100} style={{top: Math.random() / 2 * windowSize.height}}  />
+      <CSSTransition nodeRef={nodeRef} in={inProp} timeout={{appear: 0, enter: 10000, exit: 0}} classNames="cloud"
+        onEntered={() => {setTimeout(() => {setInProp(false)}, 10000)}}
+        onExited={() => {setTimeout(() => {setInProp(true), 10})}}
+        unmountOnExit
+      >
+        <div className="cloud cloud-big" ref={nodeRef} style={{top: 50}}>
+          <CloudBig width={300} height={100} />
+        </div>
+      </CSSTransition>
+      <CloudMedium className="cloud cloud-medium" width={200} height={100} style={{top: 100}}  />
+      <CloudSmall className="cloud cloud-small" width={100} height={100} style={{top: 200}}  />
       <Background
         className="background-svg"
         width={windowSize.width}

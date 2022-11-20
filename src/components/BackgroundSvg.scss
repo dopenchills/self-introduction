@@ -7,7 +7,27 @@
   
   .cloud {
     position: absolute;
-  }  
+  }
+  
+  .cloud-enter {
+    left: -50vw;
+  }
+  .cloud-enter-active {
+    left: 100vw;
+    transition: left 10000ms;
+  }
+  .cloud-enter-done {
+    left: 100vw;
+  }
+  .cloud-exit {
+    display: none;
+  }
+  .cloud-exit-active {
+    display: none;
+  }
+  .cloud-exit-done {
+    display: none;
+  }
 }
 
 
