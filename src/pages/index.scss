@@ -66,8 +66,12 @@
   }
 
   .flex-item-menu {
+    // size
     min-width: 10%;
     flex-shrink: 0;
+
+    // position
+    align-self: flex-end;
   }
 }
 
