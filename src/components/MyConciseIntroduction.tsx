@@ -4,7 +4,7 @@ import './MyConciseIntroduction.scss'
 const MyConciseIntroduction = (props: {className?: string}): JSX.Element => {
   return (
     <div className={`my-concise-introduction ${props.className}`}>
-      <h1 className="my-full-name">Ryo Sakaguchi | 坂口諒</h1>
+      <h1 className="my-full-name">Ryo Sakaguchi | 坂口 諒</h1>
       <p className="my-title">Web developer</p>
     </div>
   )
