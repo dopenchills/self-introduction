@@ -7,7 +7,17 @@
   // prevent scrolling
   overflow: hidden;
 
+  // stack background and whole-container
   position: relative;
+
+  background-color: skyblue;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 #whole-container {
@@ -15,13 +25,14 @@
   width: 95%;
   height: 100%;
 
-  // position
+  // position (stack on background)
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
   padding: 1em 0;
+  z-index: 2;
 
   // flexbox-parent
   display: flex;
@@ -85,11 +96,4 @@
   // flexbox-children
   flex-basis: content;
 
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
