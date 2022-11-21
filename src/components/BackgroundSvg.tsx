@@ -35,8 +35,8 @@ const Clouds = (): JSX.Element => {
     {
       id: "cloud-small",
       className: "cloud cloud-small",
-      style: {top: 100},
-      element: <CloudSmall width={100} height={100} />,
+      style: {top: 150},
+      element: <CloudSmall width={50} height={50} />,
       nodeRef: useRef(null),
       inState: React.useState(false),
       timeout: {enter: 960000, exit: 10}
