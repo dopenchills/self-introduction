@@ -117,8 +117,7 @@ const Skills = (): JSX.Element => {
 
             <thead>
               <tr className="header">
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">{skillgroup.name}</th>
                 <th scope="col">経験年数<br /><small>個人開発</small></th>
                 <th scope="col">経験年数<br /><small>インターン<br />実務</small></th>
                 <th scope="col">用途</th>
@@ -130,16 +129,6 @@ const Skills = (): JSX.Element => {
                 skillgroup.skills.map((skill, index) => {
                   return (
                     <tr>
-                      {
-                        index == 0 ? 
-                          <th scope="rowgroup"
-                            rowSpan={skillgroup.skills.length}
-                            className="skill-kind"
-                            >
-                              {skillgroup.name}
-                          </th> : 
-                          null
-                      }
                       <th scope="row" className="skill-name">{skill.name}</th>
                       <td>{skill.year_including_hobby}</td>
                       <td>{skill.year_including_intern}</td>
