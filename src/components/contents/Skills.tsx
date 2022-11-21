@@ -106,40 +106,43 @@ const Skills = (): JSX.Element => {
       {
         skillGroups.map((skillgroup) => {
         return (
-          <table>
-            <colgroup>
-              <col />
-              <col />
-              <col />
-              <col />
-              <col />
-            </colgroup>
+          <>
+            <h2>{skillgroup.name}</h2>
+            <table>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
 
-            <thead>
-              <tr className="header">
-                <th scope="col">{skillgroup.name}</th>
-                <th scope="col">経験年数<br /><small>個人開発</small></th>
-                <th scope="col">経験年数<br /><small>インターン<br />実務</small></th>
-                <th scope="col">用途</th>
-              </tr>
-            </thead>
+              <thead>
+                <tr className="header">
+                  <th scope="col"></th>
+                  <th scope="col">経験年数<br /><small>個人開発</small></th>
+                  <th scope="col">経験年数<br /><small>インターン<br />実務</small></th>
+                  <th scope="col">用途</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {
-                skillgroup.skills.map((skill, index) => {
-                  return (
-                    <tr>
-                      <th scope="row" className="skill-name">{skill.name}</th>
-                      <td>{skill.year_including_hobby}</td>
-                      <td>{skill.year_including_intern}</td>
-                      <td>{skill.product}</td>
-                    </tr>
-                  )
-                })
-              }
-            </tbody>
+              <tbody>
+                {
+                  skillgroup.skills.map((skill, index) => {
+                    return (
+                      <tr>
+                        <th scope="row" className="skill-name">{skill.name}</th>
+                        <td>{skill.year_including_hobby}</td>
+                        <td>{skill.year_including_intern}</td>
+                        <td>{skill.product}</td>
+                      </tr>
+                    )
+                  })
+                }
+              </tbody>
 
-          </table>
+            </table>
+          </>
         )
       })
     }
