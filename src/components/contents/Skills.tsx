@@ -102,7 +102,7 @@ const Skills = (): JSX.Element => {
     }
   ]
   return (
-    <article>  
+    <article className="skills">  
       {
         skillGroups.map((skillgroup) => {
         return (
