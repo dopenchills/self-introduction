@@ -1,4 +1,5 @@
 @use '../base';
+@use '../color';
 
 #display {
   width: 100vw;
@@ -11,7 +12,8 @@
   // stack background and whole-container
   position: relative;
 
-  background-color: skyblue;
+  color: color.$text-color-light;
+  background: linear-gradient(to left top, color.$sky-color-light, color.$whitish-color-light);
 
   &.dark-mode {
     background-color: darkblue;
