@@ -11,6 +11,10 @@
   position: relative;
 
   background-color: skyblue;
+
+  &.dark-mode {
+    background-color: darkblue;
+  }
 }
 
 .background {

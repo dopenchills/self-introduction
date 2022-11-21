@@ -5,20 +5,28 @@ import './index.scss'
 // components
 import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
-import Preferences from "../components/Preferences"
+import Preferences, { PreferenceContext } from "../components/Preferences"
 import BackgroundSvg from "../components/BackgroundSvg"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Preferences>
-      <div id="display">
-        <div id="whole-container">
-          <UpperContainer />
-          <LowerContainer />
-        </div>
-        <BackgroundSvg className="background" />
-      </div>
+      <PreferenceContext.Consumer>
+        { ({ isLightMode }) => {
+          return (
+            <div id="display" className={`${isLightMode ? "" : "dark-mode"}`}>
+            <div id="whole-container">
+              <UpperContainer />
+              <LowerContainer />
+            </div>
+            <BackgroundSvg className="background" />
+          </div>    
+          )
+        }
+        }
+      </PreferenceContext.Consumer>
     </Preferences>
+
   )
 }
 
