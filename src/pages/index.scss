@@ -3,6 +3,7 @@
 #display {
   width: 100vw;
   height: 100vh;
+  max-height: 100vh;
 
   // prevent scrolling
   overflow: hidden;
@@ -81,9 +82,12 @@
 
   .flex-item-main {
     min-width: 60%;
+    height: 100%;
 
-    margin-top: 2em;
-    margin-right: 2em;
+    padding-top: 2em;
+    padding-right: 2em;
+
+    overflow-y: scroll;
   }
 
   .flex-item-menu {
@@ -94,6 +98,8 @@
     // position
     align-self: flex-end;
   }
+
+  overflow: hidden;
 }
 
 #preference-icon-list {
