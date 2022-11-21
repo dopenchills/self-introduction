@@ -80,6 +80,11 @@ const Clouds = (): JSX.Element => {
 }
 
 const ObjectsOnGround = (): JSX.Element => {
+  if (typeof window === 'undefined') {
+    return (
+      <></>
+    )
+  }
   const [windowSize, setWindowSize] = React.useState({width: window.innerWidth, height: window.innerHeight})
 
   const resize = () => {

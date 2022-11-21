@@ -47,7 +47,15 @@ const config: GatsbyConfig = {
         }
       }
     },
-    "react-transition-group"
+    "react-transition-group",
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "work.ryo-sakaguchi.com",
+        protocol: "https",
+        hostname: "work.ryo-sakaguchi.com"
+      },
+    },
   ]
 };
 
