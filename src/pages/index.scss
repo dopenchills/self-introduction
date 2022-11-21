@@ -82,10 +82,9 @@
 
   .flex-item-main {
     min-width: 60%;
-    height: 100%;
-
-    padding-top: 2em;
-    padding-right: 2em;
+    height: calc(100% - 2em);
+    margin-top: 2em;
+    margin-right: 2em;
 
     overflow-y: scroll;
   }

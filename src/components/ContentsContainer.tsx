@@ -4,7 +4,7 @@ import Skills from "./contents/Skills"
 import Career from "./contents/Career"
 import Portfolio from "./contents/Portfolio"
 import About from "./contents/About"
-
+import "./ContentsContainer.scss"
 
 
 const ContentsContainer = (props: {className?: string, menuOptionValue?: string}): JSX.Element => {
