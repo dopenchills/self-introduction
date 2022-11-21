@@ -15,9 +15,6 @@
 
 .menu-option {
   display: block;
-
-  // position
-  margin: 0.25em 0;
   
   input {
     display: none;
@@ -31,12 +28,16 @@
     // color
     background-color: rgba($color: #BBB, $alpha: 0.2);
 
-    padding: 0.25em 0.5em 0.25em 2em;
+    padding: 0.5em 0.5em 0.5em 2em;
 
     user-select: none;
+
+    &:hover {
+      background-color: rgba($color: #BBB, $alpha: 0.5);
+    }
   }
 
   input:checked + label {
-    background-color: rgba($color: #000, $alpha: 0.5);
+    background-color: rgba($color: #BBB, $alpha: 1);
   }
 }
