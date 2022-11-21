@@ -28,7 +28,7 @@ const PreferenceIconList = (props: {className?: string}): JSX.Element => {
   return (
     <ul className={`preference-icon-list ${props.className}`}>
       <LightOrDarkModeIcon />
-      <li className="preference-icon-item"><FaGlobe className="preference-icon" /></li>
+      {/* <li className="preference-icon-item"><FaGlobe className="preference-icon" /></li> */}
     </ul>
   )
 }
