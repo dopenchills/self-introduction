@@ -19,7 +19,7 @@ const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
 
   return (
     <li className="preference-icon-item" onClick={onClick}>
-      {isLightMode ? <FaRegSun className="preference-icon" /> : <FaRegMoon className="preference-icon" />}
+      {isLightMode ? <FaRegMoon className="preference-icon" /> : <FaRegSun className="preference-icon" />}
     </li>
   )
 }
