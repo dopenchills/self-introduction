@@ -29,7 +29,7 @@
 
 #whole-container {
   // size
-  width: 95%;
+  width: calc(100% - 4em);
   height: 100%;
 
   // position (stack on background)
@@ -38,7 +38,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  padding: 1em 0;
+  padding: 2em 0 2.5em 0;
   z-index: 2;
 
   // flexbox-parent
@@ -82,11 +82,12 @@
   align-content: space-between;
   gap: 0;
 
+  margin-top: 2em;
+
   .flex-item-main {
     min-width: 60%;
-    width: 100%;
-    height: calc(100% - 2em);
-    margin-top: 2em;
+    width: 70%;
+    height: 100%;
     margin-right: 2em;
 
     overflow-y: scroll;
@@ -95,6 +96,7 @@
   .flex-item-menu {
     // size
     min-width: 10%;
+    width: 20%;
     flex-shrink: 0;
 
     // position
