@@ -16,37 +16,14 @@ type SkillGroups = {
 const Skills = (): JSX.Element => {
   const skillGroups: SkillGroups = [
     {
-      name: "言語",
+      name: "バックエンド",
       skills: [
-          {
-            name: "Python",
-            year_including_hobby: 5,
-            year_including_intern: 1,
-            product: "Webアプリ, 機械学習, スクレイピング"
-          },
-          {
-            name: "Ruby",
-            year_including_hobby: 0.5,
-            year_including_intern: 0.5,
-            product: "業務上の調査"
-          },
-          {
-            name: "JavaScript",
-            year_including_hobby: 1,
-            year_including_intern: 1,
-            product: "Webアプリ, Alexa Skills"
-          },
-          {
-            name: "TypeScript",
-            year_including_hobby: 0.1,
-            year_including_intern: 0,
-            product: "本Webサイト"
-          },
-      ]
-    },
-    {
-      name: "FW",
-      skills: [
+        {
+          name: "Python",
+          year_including_hobby: 5,
+          year_including_intern: 1,
+          product: "Webアプリ, 機械学習"
+        },
         {
           name: "Django",
           year_including_hobby: 0.5,
@@ -54,15 +31,56 @@ const Skills = (): JSX.Element => {
           product: "Webアプリ"
         },
         {
+          name: "Ruby",
+          year_including_hobby: 0.5,
+          year_including_intern: 0.5,
+          product: "業務上の調査"
+        },
+        {
           name: "Ruby on Rails",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
           product: "業務上の調査"
-        }    
+        },
+        {
+          name: "Java, R",
+          year_including_hobby: 0.5,
+          year_including_intern: 0,
+          product: "大学の課題"
+        }
       ]
     },
     {
-      name: "DB",
+      name: "フロントエンド",
+      skills: [
+          {
+            name: "HTML, CSS, JavaScript",
+            year_including_hobby: 1.5,
+            year_including_intern: 1,
+            product: "Webサイト制作"
+          },
+          {
+            name: "TypeScript",
+            year_including_hobby: 0.1,
+            year_including_intern: 0,
+            product: "Webサイト制作"
+          },
+          {
+            name: "React",
+            year_including_hobby: 0.1,
+            year_including_intern: 0,
+            product: "Webサイト制作"
+          },
+          {
+            name: "Gatsby",
+            year_including_hobby: 0.1,
+            year_including_intern: 0,
+            product: "Webサイト制作"
+          },
+      ]
+    },
+    {
+      name: "データベース",
       skills: [
         {
           name: "MySQL",
@@ -82,22 +100,28 @@ const Skills = (): JSX.Element => {
       name: "インフラ",
       skills: [
         {
-          name: "AWS lambda",
+          name: "Amazon Web Services",
           year_including_hobby: 1,
           year_including_intern: 0,
-          product: "Alexa Skills, LINE BOT, バッチ処理"
+          product: "Alexa Skills (Lambda), LINE BOT (Lambda), バッチ処理 (Lambda, ECS)"
         }
       ]
     },
     {
-      name: "ツール",
+      name: "その他",
       skills: [
         {
           name: "Git",
           year_including_hobby: 1.5,
           year_including_intern: 1.5,
           product: "個人開発"
-        }    
+        },
+        {
+          name: "Docker",
+          year_including_hobby: 1,
+          year_including_intern: 0.5,
+          product: "開発環境構築, LambdaやECS上の処理"
+        }
       ]
     }
   ]
