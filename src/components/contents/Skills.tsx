@@ -6,7 +6,7 @@ type Skill = {
   name: string,
   year_including_hobby: number,
   year_including_intern: number,
-  product?: string  
+  products: string[]
 }
 
 type SkillGroups = {
@@ -23,31 +23,31 @@ const Skills = (): JSX.Element => {
           name: "Python",
           year_including_hobby: 5,
           year_including_intern: 1,
-          product: "Webアプリ, 機械学習"
+          products: ["Webアプリ", "機械学習"]
         },
         {
           name: "Django",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
-          product: "Webアプリ"
+          products: ["Webアプリ"]
         },
         {
           name: "Ruby",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
-          product: "業務上の調査"
+          products: ["業務上の調査"]
         },
         {
           name: "Ruby on Rails",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
-          product: "業務上の調査"
+          products: ["業務上の調査"]
         },
         {
           name: "Java, R",
           year_including_hobby: 0.5,
           year_including_intern: 0,
-          product: "大学の課題"
+          products: ["大学の課題"]
         }
       ]
     },
@@ -58,25 +58,25 @@ const Skills = (): JSX.Element => {
             name: "HTML, CSS, JavaScript",
             year_including_hobby: 1.5,
             year_including_intern: 1,
-            product: "Webサイト制作"
+            products: ["Webサイト制作"]
           },
           {
             name: "TypeScript",
             year_including_hobby: 0.1,
             year_including_intern: 0,
-            product: "Webサイト制作"
+            products: ["Webサイト制作"]
           },
           {
             name: "React",
             year_including_hobby: 0.1,
             year_including_intern: 0,
-            product: "Webサイト制作"
+            products: ["Webサイト制作"]
           },
           {
             name: "Gatsby",
             year_including_hobby: 0.1,
             year_including_intern: 0,
-            product: "Webサイト制作"
+            products: ["Webサイト制作"]
           },
       ]
     },
@@ -87,13 +87,13 @@ const Skills = (): JSX.Element => {
           name: "MySQL",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
-          product: "業務上の調査"
+          products: ["業務上の調査"]
         },
         {
           name: "PostgreSQL",
           year_including_hobby: 0.5,
           year_including_intern: 0.5,
-          product: "Webアプリ"
+          products: ["Webアプリ"]
         }    
       ]
     },
@@ -104,7 +104,7 @@ const Skills = (): JSX.Element => {
           name: "Amazon Web Services",
           year_including_hobby: 1,
           year_including_intern: 0,
-          product: "Alexa Skills (Lambda), LINE BOT (Lambda), バッチ処理 (Lambda, ECS)"
+          products: ["Alexa Skills (Lambda)", "LINE BOT (Lambda)", "バッチ処理 (Lambda, ECS)"]
         }
       ]
     },
@@ -115,13 +115,13 @@ const Skills = (): JSX.Element => {
           name: "Git",
           year_including_hobby: 1.5,
           year_including_intern: 1.5,
-          product: "個人開発"
+          products: ["個人開発"]
         },
         {
           name: "Docker",
           year_including_hobby: 1,
           year_including_intern: 0.5,
-          product: "開発環境構築, LambdaやECS上の処理"
+          products: ["開発環境構築", "LambdaやECS上の処理"]
         }
       ]
     }
@@ -159,7 +159,13 @@ const Skills = (): JSX.Element => {
                         <th scope="row" className="skill-name">{skill.name}</th>
                         <td>{skill.year_including_hobby}</td>
                         <td>{skill.year_including_intern}</td>
-                        <td>{skill.product}</td>
+                        <td>{skill.products.map((product, index) => {
+                          return (
+                            <>
+                              <span className="product-item">{product}{index !== skill.products.length ? <br /> : null}</span>
+                            </>
+                          )
+                        })}</td>
                       </Tr>
                     )
                   })

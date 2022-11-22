@@ -1,3 +1,5 @@
+@use '../../color';
+
 .skills{
   col {
     &:nth-of-type(1) {
@@ -9,6 +11,13 @@
     &:nth-child(4) {
       width: 60%;
     }
-  }  
+  }
+
+  .product-item {
+    padding: 0.2em;
+    border-radius: 0.2em;
+  }
 }
+
+
 
