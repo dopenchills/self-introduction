@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { PreferenceContext } from '../Preferences'
+import { PreferenceContext } from '../contexts/Preference'
 
 const Tr = (props: {children: JSX.Element | JSX.Element[], className?: string}): JSX.Element => {
   const { isLightMode } = React.useContext(PreferenceContext)

@@ -2,7 +2,7 @@ import * as React from "react"
 import { CSSTransition } from "react-transition-group"
 import { useRef } from 'react';
 
-import { PreferenceContext } from "./Preferences";
+import { PreferenceContext } from "./contexts/Preference";
 
 // svg
 import Background from '-!svg-react-loader?name=Background!../assets/Background.svg'

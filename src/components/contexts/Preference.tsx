@@ -23,7 +23,7 @@ const initialContextValue = {
 
 export const PreferenceContext = React.createContext(initialContextValue)
 
-const Preferences = (props: {children: JSX.Element}): JSX.Element => {
+const PreferencesContextProvider = (props: {children: JSX.Element}): JSX.Element => {
   const [state, dispatch] = React.useReducer(
     // reducer
     (state: preferenceState, action: action): preferenceState => {
@@ -67,4 +67,4 @@ const Preferences = (props: {children: JSX.Element}): JSX.Element => {
   )
 }
 
-export default Preferences
+export default PreferencesContextProvider

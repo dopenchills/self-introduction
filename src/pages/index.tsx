@@ -5,7 +5,7 @@ import './index.scss'
 // components
 import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
-import Preferences, { PreferenceContext } from "../components/Preferences"
+import PreferencesContextProvider, { PreferenceContext } from "../components/contexts/Preference"
 import BackgroundSvg from "../components/BackgroundSvg"
 import MenuPane from "../components/MenuPane"
 import MenuContextProvider, { MenuContext } from "../components/contexts/Menu"
@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <MenuContext.Consumer>
         {() => {
           return (
-            <Preferences>
+            <PreferencesContextProvider>
               <PreferenceContext.Consumer>
                 { ({ isLightMode }) => {
                   return (
@@ -31,7 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   )
                 }}
             </PreferenceContext.Consumer>
-          </Preferences>
+          </PreferencesContextProvider>
           )
         }}
       </MenuContext.Consumer>

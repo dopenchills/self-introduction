@@ -1,7 +1,7 @@
 import * as React from 'react'
 import MenuList from './MenuList'
 import './MenuPane.scss'
-import { PreferenceContext } from './Preferences'
+import { PreferenceContext } from './contexts/Preference'
 
 const MenuPane = (props: {className?: string}): JSX.Element => {
   const { dispatch, showMenuPane } = React.useContext(PreferenceContext)

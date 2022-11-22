@@ -1,5 +1,5 @@
 import * as React from "react"
-import { PreferenceContext } from "./Preferences"
+import { PreferenceContext } from "./contexts/Preference"
 import Home from "./contents/Home"
 import Skills from "./contents/Skills"
 import Career from "./contents/Career"
