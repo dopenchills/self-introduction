@@ -1,6 +1,6 @@
 @use '../../color';
 
-.skills{
+article.skills{
   col {
     &:nth-of-type(1) {
       width: 20%;
@@ -11,6 +11,10 @@
     &:nth-child(4) {
       width: 60%;
     }
+  }
+
+  & td.align-right {
+    text-align: right;
   }
 
   .product-item {

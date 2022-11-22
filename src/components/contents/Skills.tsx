@@ -139,7 +139,6 @@ const Skills = (): JSX.Element => {
                 <col />
                 <col />
                 <col />
-                <col />
               </colgroup>
 
               <thead>
@@ -157,8 +156,8 @@ const Skills = (): JSX.Element => {
                     return (
                       <Tr>
                         <th scope="row" className="skill-name">{skill.name}</th>
-                        <td>{skill.year_including_hobby}</td>
-                        <td>{skill.year_including_intern}</td>
+                        <td className="align-right">{skill.year_including_hobby}</td>
+                        <td className="align-right">{skill.year_including_intern}</td>
                         <td>{skill.products.map((product, index) => {
                           return (
                             <>
