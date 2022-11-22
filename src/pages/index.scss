@@ -28,6 +28,13 @@
   z-index: 1;
 }
 
+.menu-pane-index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
 #whole-container {
   // size
   width: calc(100% - 4em);

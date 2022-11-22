@@ -1,5 +1,6 @@
 import * as React from "react"
 import { PreferenceContext } from "./Preferences"
+import { MenuContext } from "./contexts/Menu"
 import './MenuList.scss'
 
 const MenuOption = (
@@ -9,19 +10,20 @@ const MenuOption = (
     value: string,
     label?: string,
     checked?: boolean,
-    onHoverStart: (value: string) => void,
-    onHoverEnd: () => void
   }): JSX.Element => {
   const { isLightMode } = React.useContext(PreferenceContext)
+  const { dispatch } = React.useContext(MenuContext)
+
   const name                  = props.name   || "menu"
   const label                 = props.label  || props.value
   const id                    = `${name}-${props.value}`
 
+
   const onMouseEnter = () => {
-    props.onHoverStart(props.value)
+    dispatch({type: "hovered", payload: props.value})
   }
   const onMouseLeave = () => {
-    props.onHoverEnd()
+    dispatch({type: "hovered", payload: ""})
   }
   return (
     <div className={`menu-option ${props.className}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
@@ -35,10 +37,9 @@ const MenuList = (
   props: {
     className?: string,
     value?: string,
-    onMenuListChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
-    onMenuOptionHovered: (optionValue: string) => void
   }): JSX.Element => {
-  const checkedValue = props.value || "home"
+    const { dispatch: dispatchPreference } = React.useContext(PreferenceContext)
+    const { selected, dispatch: dispatchMenu } = React.useContext(MenuContext)
   const menuOptionValues = [
     "home",
     "skills",
@@ -46,23 +47,23 @@ const MenuList = (
     "portfolio",
   ]
 
-  const onHoverStart = (value: string): void => {
-    props.onMenuOptionHovered(value)
+  const onMenuListChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    dispatchMenu({type: "selected", payload: event.target.value})
   }
-  const onHoverEnd = (): void => {
-    props.onMenuOptionHovered("")
+
+  const onClick = () => {
+    dispatchPreference({type: "hideMenuPane", payload: undefined})
   }
   
   const menuOptions = menuOptionValues.map(value => {
-    if (value === checkedValue) {
-      return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} onHoverStart={onHoverStart} onHoverEnd={onHoverEnd} />
+    if (value === selected) {
+      return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} />
     }
-    return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={false}  onHoverStart={onHoverStart} onHoverEnd={onHoverEnd} />
-
+    return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={false} />
   })
 
   return (
-    <div className={`menu-list ${props.className}`} onChange={props.onMenuListChange}>
+    <div className={`menu-list ${props.className}`} onChange={onMenuListChange} onClick={onClick}>
       {menuOptions}
     </div>
   )

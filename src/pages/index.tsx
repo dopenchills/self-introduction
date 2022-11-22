@@ -7,26 +7,35 @@ import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
 import Preferences, { PreferenceContext } from "../components/Preferences"
 import BackgroundSvg from "../components/BackgroundSvg"
+import MenuPane from "../components/MenuPane"
+import MenuContextProvider, { MenuContext } from "../components/contexts/Menu"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <Preferences>
-      <PreferenceContext.Consumer>
-        { ({ isLightMode }) => {
+    <MenuContextProvider>
+      <MenuContext.Consumer>
+        {() => {
           return (
-            <div id="display" className={`${isLightMode ? "" : "dark-mode"}`}>
-            <div id="whole-container">
-              <UpperContainer />
-              <LowerContainer />
-            </div>
-            <BackgroundSvg className="background" />
-          </div>    
+            <Preferences>
+              <PreferenceContext.Consumer>
+                { ({ isLightMode }) => {
+                  return (
+                    <div id="display" className={`${isLightMode ? "" : "dark-mode"}`}>
+                    <div id="whole-container">
+                      <UpperContainer />
+                      <LowerContainer />
+                    </div>
+                    <BackgroundSvg className="background" />
+                    <MenuPane className="menu-pane-index" />
+                  </div>    
+                  )
+                }}
+            </PreferenceContext.Consumer>
+          </Preferences>
           )
-        }
-        }
-      </PreferenceContext.Consumer>
-    </Preferences>
-
+        }}
+      </MenuContext.Consumer>
+    </MenuContextProvider>
   )
 }
 

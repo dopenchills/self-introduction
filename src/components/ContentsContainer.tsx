@@ -5,11 +5,13 @@ import Skills from "./contents/Skills"
 import Career from "./contents/Career"
 import Portfolio from "./contents/Portfolio"
 import "./ContentsContainer.scss"
+import { MenuContext } from "./contexts/Menu"
 
 
-const ContentsContainer = (props: {className?: string, menuOptionValue?: string}): JSX.Element => {
+const ContentsContainer = (props: {className?: string}): JSX.Element => {
   const { isLightMode } = React.useContext(PreferenceContext)
-  const menuOptionValue = props.menuOptionValue || "home"
+  const { selected } = React.useContext(MenuContext)
+  const menuOptionValue = selected || "home"
   const contentsMap = new Map<string, JSX.Element>([
     ["home", <Home />],
     ["skills", <Skills />],

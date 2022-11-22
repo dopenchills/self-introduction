@@ -7,11 +7,13 @@ type action = {
 }
 
 type preferenceState = {
-  isLightMode: boolean
+  isLightMode: boolean,
+  showMenuPane: boolean,
 }
 
 const initialPreferenceState = {
-  isLightMode: true
+  isLightMode: true,
+  showMenuPane: false
 }
 
 const initialContextValue = {
@@ -35,6 +37,17 @@ const Preferences = (props: {children: JSX.Element}): JSX.Element => {
           return {
             ...state,
             isLightMode: true
+          }
+        case 'showMenuPane':
+          return {
+            ...state,
+            showMenuPane: true
+          }
+        case 'hideMenuPane':
+          console.log("hide")
+          return {
+            ...state,
+            showMenuPane: false
           }
         default:
           return state
