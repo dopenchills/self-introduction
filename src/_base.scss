@@ -9,7 +9,6 @@ html,
 body,
 h1,
 p,
-ul,
 #___gatsby {
     // size
     width: 100%;
@@ -26,6 +25,11 @@ ul,
 p {
   margin-top: 36px;
   margin-bottom: 36px;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 40px;
 }
 
 * {
