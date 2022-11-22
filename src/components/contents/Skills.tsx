@@ -4,8 +4,8 @@ import './Skills.scss'
 
 type Skill = {
   name: string,
-  year_including_hobby: number,
-  year_including_intern: number,
+  year_including_hobby: string,
+  year_including_intern: string,
   products: string[]
 }
 
@@ -21,32 +21,32 @@ const Skills = (): JSX.Element => {
       skills: [
         {
           name: "Python",
-          year_including_hobby: 5,
-          year_including_intern: 1,
+          year_including_hobby: "5年",
+          year_including_intern: "1年",
           products: ["Webアプリ", "機械学習"]
         },
         {
           name: "Django",
-          year_including_hobby: 0.5,
-          year_including_intern: 0.5,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "6ヶ月",
           products: ["Webアプリ"]
         },
         {
           name: "Ruby",
-          year_including_hobby: 0.5,
-          year_including_intern: 0.5,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "6ヶ月",
           products: ["業務上の調査"]
         },
         {
           name: "Ruby on Rails",
-          year_including_hobby: 0.5,
-          year_including_intern: 0.5,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "6ヶ月",
           products: ["業務上の調査"]
         },
         {
           name: "Java, R",
-          year_including_hobby: 0.5,
-          year_including_intern: 0,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "0",
           products: ["大学の課題"]
         }
       ]
@@ -56,26 +56,26 @@ const Skills = (): JSX.Element => {
       skills: [
           {
             name: "HTML, CSS, JavaScript",
-            year_including_hobby: 1.5,
-            year_including_intern: 1,
+            year_including_hobby: "1.5年",
+            year_including_intern: "1年",
             products: ["Webサイト制作"]
           },
           {
             name: "TypeScript",
-            year_including_hobby: 0.1,
-            year_including_intern: 0,
+            year_including_hobby: "1ヶ月",
+            year_including_intern: "0",
             products: ["Webサイト制作"]
           },
           {
             name: "React",
-            year_including_hobby: 0.1,
-            year_including_intern: 0,
+            year_including_hobby: "1ヶ月",
+            year_including_intern: "0",
             products: ["Webサイト制作"]
           },
           {
             name: "Gatsby",
-            year_including_hobby: 0.1,
-            year_including_intern: 0,
+            year_including_hobby: "1ヶ月",
+            year_including_intern: "0",
             products: ["Webサイト制作"]
           },
       ]
@@ -85,14 +85,14 @@ const Skills = (): JSX.Element => {
       skills: [
         {
           name: "MySQL",
-          year_including_hobby: 0.5,
-          year_including_intern: 0.5,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "6ヶ月",
           products: ["業務上の調査"]
         },
         {
           name: "PostgreSQL",
-          year_including_hobby: 0.5,
-          year_including_intern: 0.5,
+          year_including_hobby: "6ヶ月",
+          year_including_intern: "6ヶ月",
           products: ["Webアプリ"]
         }    
       ]
@@ -102,8 +102,8 @@ const Skills = (): JSX.Element => {
       skills: [
         {
           name: "Amazon Web Services",
-          year_including_hobby: 1,
-          year_including_intern: 0,
+          year_including_hobby: "1年",
+          year_including_intern: "0",
           products: ["Alexa Skills (Lambda)", "LINE BOT (Lambda)", "バッチ処理 (Lambda, ECS)"]
         }
       ]
@@ -113,14 +113,14 @@ const Skills = (): JSX.Element => {
       skills: [
         {
           name: "Git",
-          year_including_hobby: 1.5,
-          year_including_intern: 1.5,
+          year_including_hobby: "1.5年",
+          year_including_intern: "1.5年",
           products: ["個人開発"]
         },
         {
           name: "Docker",
-          year_including_hobby: 1,
-          year_including_intern: 0.5,
+          year_including_hobby: "1年",
+          year_including_intern: "6ヶ月",
           products: ["開発環境構築", "LambdaやECS上の処理"]
         }
       ]
