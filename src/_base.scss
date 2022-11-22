@@ -23,6 +23,11 @@ ul,
     font-family: ヒラギノ角ゴシック, "Hiragino Sans", "Helvetica Neue", 游ゴシック, メイリオ, Arial, sans-serif;
 }
 
+p {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
 * {
   // prevent unintentional overflow
   box-sizing: border-box;
