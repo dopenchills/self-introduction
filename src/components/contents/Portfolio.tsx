@@ -47,7 +47,7 @@ const Portfolio = (): JSX.Element => {
           フォントサイズを大きくすると多少読みやすくなるものの、不格好になってしまいます。
         </p>
         <p>
-          自分が読みやすいと思う既存のサイト(<a href="notion.so">notion.so</a>や<a href="note.com">note.com</a>)を分析することで改善していきました。
+          自分が読みやすいと思う既存のサイト(<a href="https://notion.so">notion.so</a>や<a href="https://note.com">note.com</a>)を分析することで改善していきました。
         </p>
         <h4>CSSについて調査したりデバッグしたりするのに苦労したこと</h4>
         <p>
