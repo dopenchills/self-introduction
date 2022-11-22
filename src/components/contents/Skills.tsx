@@ -169,10 +169,10 @@ const Skills = (): JSX.Element => {
                     )
                   })
                 }
-                <tfoot style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</tfoot>
               </tbody>
 
             </table>
+            <span style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</span>
           </>
         )
       })
