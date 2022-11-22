@@ -1,4 +1,5 @@
 import * as React from "react"
+import Tr from "../commons/Tr"
 import './Skills.scss'
 
 type Skill = {
@@ -142,24 +143,24 @@ const Skills = (): JSX.Element => {
               </colgroup>
 
               <thead>
-                <tr className="header">
+                <Tr className="header">
                   <th scope="col"></th>
                   <th scope="col">経験年数<br /><small>個人開発</small></th>
                   <th scope="col">経験年数<br /><small>インターン<br />実務</small></th>
                   <th scope="col">用途</th>
-                </tr>
+                </Tr>
               </thead>
 
               <tbody>
                 {
                   skillgroup.skills.map((skill, index) => {
                     return (
-                      <tr>
+                      <Tr>
                         <th scope="row" className="skill-name">{skill.name}</th>
                         <td>{skill.year_including_hobby}</td>
                         <td>{skill.year_including_intern}</td>
                         <td>{skill.product}</td>
-                      </tr>
+                      </Tr>
                     )
                   })
                 }

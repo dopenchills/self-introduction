@@ -20,6 +20,9 @@ th, td {
 tr {
   &:hover {
     background-color: color.$whitish-color-light-quarter;
+    &.dark-mode {
+      background-color: color.$black-like-color-dark-quarter;
+    }
   }
 }
 

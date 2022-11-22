@@ -1,4 +1,5 @@
 import * as React from "react"
+import { PreferenceContext } from "./Preferences"
 import './MenuList.scss'
 
 const MenuOption = (
@@ -11,6 +12,7 @@ const MenuOption = (
     onHoverStart: (value: string) => void,
     onHoverEnd: () => void
   }): JSX.Element => {
+  const { isLightMode } = React.useContext(PreferenceContext)
   const name                  = props.name   || "menu"
   const label                 = props.label  || props.value
   const id                    = `${name}-${props.value}`
@@ -24,7 +26,7 @@ const MenuOption = (
   return (
     <div className={`menu-option ${props.className}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
       <input type="radio" name={name} value={props.value} id={id} checked={props.checked} readOnly={true} />
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className={`${isLightMode ? "" : "dark-mode"}`}>{label}</label>
     </div>
   )
 }

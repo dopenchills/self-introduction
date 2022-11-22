@@ -2,23 +2,31 @@ import * as React from "react"
 import { CSSTransition } from "react-transition-group"
 import { useRef } from 'react';
 
+import { PreferenceContext } from "./Preferences";
+
 // svg
 import Background from '-!svg-react-loader?name=Background!../assets/Background.svg'
 import CloudBig from '-!svg-react-loader?name=Background!../assets/CloudBig.svg'
 import CloudMedium from '-!svg-react-loader?name=Background!../assets/CloudMedium.svg'
 import CloudSmall from '-!svg-react-loader?name=Background!../assets/CloudSmall.svg'
 
+import BackgroundDark from '-!svg-react-loader?name=Background!../assets/BackgroundDark.svg'
+import CloudBigDark from '-!svg-react-loader?name=Background!../assets/CloudBigDark.svg'
+import CloudMediumDark from '-!svg-react-loader?name=Background!../assets/CloudMediumDark.svg'
+import CloudSmallDark from '-!svg-react-loader?name=Background!../assets/CloudSmallDark.svg'
+
 // scss
 import './BackgroundSvg.scss'
 
 
 const Clouds = (): JSX.Element => {
+  const { isLightMode } = React.useContext(PreferenceContext)
   const animatedCloudItems = [
     {
       id: "cloud-big",
       className: "cloud cloud-big",
       style: {top: 100},
-      element: <CloudBig width={300} height={100} />,
+      element: isLightMode ? <CloudBig width={300} height={100} /> : <CloudBigDark width={300} height={100} />,
       nodeRef: useRef(null),
       inState: React.useState(false),
       timeout: {enter: 240000, exit: 10}
@@ -27,7 +35,7 @@ const Clouds = (): JSX.Element => {
       id: "cloud-medium",
       className: "cloud cloud-medium",
       style: {top: 100},
-      element: <CloudMedium width={200} height={100} />,
+      element: isLightMode ? <CloudMedium width={200} height={100} /> : <CloudMediumDark width={200} height={100} />,
       nodeRef: useRef(null),
       inState: React.useState(false),
       timeout: {enter: 480000, exit: 10}
@@ -36,7 +44,7 @@ const Clouds = (): JSX.Element => {
       id: "cloud-small",
       className: "cloud cloud-small",
       style: {top: 150},
-      element: <CloudSmall width={50} height={50} />,
+      element: isLightMode ? <CloudSmall width={50} height={50} /> : <CloudSmallDark width={50} height={50} />,
       nodeRef: useRef(null),
       inState: React.useState(false),
       timeout: {enter: 960000, exit: 10}
@@ -85,6 +93,8 @@ const ObjectsOnGround = (): JSX.Element => {
       <></>
     )
   }
+  const { isLightMode } = React.useContext(PreferenceContext)
+
   const [windowSize, setWindowSize] = React.useState({width: window.innerWidth, height: window.innerHeight})
 
   const resize = () => {
@@ -107,12 +117,23 @@ const ObjectsOnGround = (): JSX.Element => {
   const verticalOffset   = windowSize.height - svgRenderHeight + verticalOffsetMargin
 
   return (
-      <Background
-      className="background-svg"
-      width={windowSize.width}
-      height={svgRenderHeight}
-      style={{top: verticalOffset}}
-    />
+    <>
+    {
+      isLightMode ?
+        <Background
+        className="background-svg"
+        width={windowSize.width}
+        height={svgRenderHeight}
+        style={{top: verticalOffset}}
+      /> :
+      <BackgroundDark
+        className="background-svg"
+        width={windowSize.width}
+        height={svgRenderHeight}
+        style={{top: verticalOffset}}
+      />
+     }
+    </>
   )
 }
 

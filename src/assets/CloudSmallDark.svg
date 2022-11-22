@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 95.5248 100.34" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<radialGradient cx="30.5715" cy="33.6451" gradientTransform="matrix(1.0714 0 0 1 -5.78184 0)" gradientUnits="userSpaceOnUse" id="RadialGradient" r="32.5153">
+<stop offset="0" stop-color="#738079"/>
+<stop offset="1" stop-color="#000000"/>
+</radialGradient>
+</defs>
+<g id="レイヤー-1">
+<path d="M4.08396 50.3154C4.08396 26.1463 21.2973 6.55342 42.531 6.55342C63.7647 6.55342 80.978 26.1463 80.978 50.3154C80.978 74.4845 63.7647 94.0774 42.531 94.0774C21.2973 94.0774 4.08396 74.4845 4.08396 50.3154Z" fill="url(#RadialGradient)" fill-rule="nonzero" opacity="1" stroke="#e6f2ec" stroke-linecap="butt" stroke-linejoin="round" stroke-width="0"/>
+</g>
+</svg>

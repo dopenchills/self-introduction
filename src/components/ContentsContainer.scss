@@ -1,8 +1,10 @@
 @use '../color';
 
 .contents-container {
-  box-shadow:
-    inset 0 -3em 3em color.$whitish-color-light-half;
+  box-shadow: inset 0 -3em 3em color.$whitish-color-light-half;
+    &.dark-mode {
+      box-shadow: inset 0 -3em 3em color.$black-like-color-dark-half;
+    }
   
   padding: 2.5em;
 }

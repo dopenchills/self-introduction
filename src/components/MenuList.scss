@@ -25,6 +25,9 @@
 
     // color
     background-color: color.$whitish-color-light-half;
+    &.dark-mode {
+      background-color: color.$black-like-color-dark-half;
+    }
 
     padding: 0.5em 0.5em 0.5em 2em;
 
@@ -32,10 +35,16 @@
 
     &:hover {
       background-color: color.$whitish-color-light-quarter;
+      &.dark-mode {
+        background-color: color.$black-like-color-dark-quarter;
+      }
     }
   }
 
   input:checked + label {
     background-color: color.$whitish-color-light;
+    &.dark-mode {
+      background-color: color.$grey-like-color;
+    }
   }
 }
