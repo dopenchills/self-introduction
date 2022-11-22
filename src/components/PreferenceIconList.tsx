@@ -36,7 +36,7 @@ const HamburgerMenuIcon = (): JSX.Element => {
   }
 
   return (
-    <li className="preference-icon-item" onClick={onClick}>
+    <li className="preference-icon-item hamburger-menu-icon" onClick={onClick}>
       <GiHamburgerMenu className="preference-icon" />
     </li>
   )

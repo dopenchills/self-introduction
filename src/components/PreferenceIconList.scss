@@ -1,6 +1,12 @@
 .preference-icon-list {
   margin: 0;
   padding: 0;
+
+  .hamburger-menu-icon {
+    @media (min-width: 1000px) {
+      display: none;
+    }
+  }
 }
 
 .preference-icon-item {
