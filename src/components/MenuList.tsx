@@ -42,7 +42,6 @@ const MenuList = (
     "skills",
     "career",
     "portfolio",
-    "about"
   ]
 
   const onHoverStart = (value: string): void => {
