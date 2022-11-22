@@ -18,6 +18,13 @@ th, td {
 }
 
 tr {
+  tbody &:nth-of-type(odd) {
+    background-color: color.$whitish-color-light-half;
+    &.dark-mode {
+      background-color: color.$black-like-color-dark-half;
+    }
+  }
+
   &:hover {
     background-color: color.$whitish-color-light-quarter;
     &.dark-mode {
