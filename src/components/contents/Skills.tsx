@@ -144,8 +144,8 @@ const Skills = (): JSX.Element => {
               <thead>
                 <Tr className="header">
                   <th scope="col"></th>
-                  <th scope="col">経験年数<br /><small>個人開発</small></th>
-                  <th scope="col">経験年数<br /><small>インターン<br />実務</small></th>
+                  <th scope="col">経験年数<sup>*1</sup></th>
+                  <th scope="col">経験年数<sup>*2</sup></th>
                   <th scope="col">用途</th>
                 </Tr>
               </thead>
@@ -169,6 +169,7 @@ const Skills = (): JSX.Element => {
                     )
                   })
                 }
+                <tfoot style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</tfoot>
               </tbody>
 
             </table>
