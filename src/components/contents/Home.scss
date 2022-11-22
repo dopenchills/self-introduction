@@ -2,6 +2,9 @@
   .profile-image {
     // text can wrap this image
     float: left;
+    @media (max-width: 500px) {
+      float: none;  
+    }
 
     // text can be apart from image
     margin: 0 1.5em 1.5em 0;
