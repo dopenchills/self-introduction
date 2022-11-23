@@ -58,6 +58,7 @@ const config: GatsbyConfig = {
         hostname: process.env.ISPROD ? process.env.PROD_HOSTNAME : process.env.STG_HOSTNAME
       },
     },
+    "framer-motion",
   ]
 };
 

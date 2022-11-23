@@ -1,6 +1,8 @@
 import * as React from "react"
 import Tr from "../commons/Tr"
 import './Skills.scss'
+import AnimatedContents from "./AnimatedContents"
+
 
 type Skill = {
   name: string | JSX.Element,
@@ -127,57 +129,59 @@ const Skills = (): JSX.Element => {
     }
   ]
   return (
-    <article className="skills">  
-      {
-        skillGroups.map((skillgroup) => {
-        return (
-          <>
-            <h2>{skillgroup.name}</h2>
-            <table>
-              <colgroup>
-                <col />
-                <col />
-                <col />
-                <col />
-              </colgroup>
+    <AnimatedContents>    
+      <article className="skills">  
+        {
+          skillGroups.map((skillgroup) => {
+          return (
+            <>
+              <h2>{skillgroup.name}</h2>
+              <table>
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
 
-              <thead>
-                <Tr className="header">
-                  <th scope="col"></th>
-                  <th scope="col">経験年数<sup>*1</sup></th>
-                  <th scope="col">経験年数<sup>*2</sup></th>
-                  <th scope="col">用途</th>
-                </Tr>
-              </thead>
+                <thead>
+                  <Tr className="header">
+                    <th scope="col"></th>
+                    <th scope="col">経験年数<sup>*1</sup></th>
+                    <th scope="col">経験年数<sup>*2</sup></th>
+                    <th scope="col">用途</th>
+                  </Tr>
+                </thead>
 
-              <tbody>
-                {
-                  skillgroup.skills.map((skill, index) => {
-                    return (
-                      <Tr>
-                        <th scope="row" className="skill-name">{skill.name}</th>
-                        <td className="align-right">{skill.year_including_hobby}</td>
-                        <td className="align-right">{skill.year_including_intern}</td>
-                        <td>{skill.products.map((product, index) => {
-                          return (
-                            <>
-                              <span className="product-item">{product}{index !== skill.products.length ? <br /> : null}</span>
-                            </>
-                          )
-                        })}</td>
-                      </Tr>
-                    )
-                  })
-                }
-              </tbody>
+                <tbody>
+                  {
+                    skillgroup.skills.map((skill, index) => {
+                      return (
+                        <Tr>
+                          <th scope="row" className="skill-name">{skill.name}</th>
+                          <td className="align-right">{skill.year_including_hobby}</td>
+                          <td className="align-right">{skill.year_including_intern}</td>
+                          <td>{skill.products.map((product, index) => {
+                            return (
+                              <>
+                                <span className="product-item">{product}{index !== skill.products.length ? <br /> : null}</span>
+                              </>
+                            )
+                          })}</td>
+                        </Tr>
+                      )
+                    })
+                  }
+                </tbody>
 
-            </table>
-            <span style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</span>
-          </>
-        )
-      })
-    }
-    </article>
+              </table>
+              <span style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</span>
+            </>
+          )
+        })
+      }
+      </article>
+    </AnimatedContents>
   )
 }
 
