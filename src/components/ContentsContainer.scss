@@ -1,4 +1,4 @@
-@use '../variable';
+@use '../responsive';
 @use '../color';
 
 .contents-container {
@@ -8,7 +8,7 @@
     }
   
   padding: 2.5em;
-  @media (max-width: variable.$responsive-sp-lteq) {
+  @media (max-width: responsive.$responsive-sp-lteq) {
     padding: 0.5em;    
   }
 }
