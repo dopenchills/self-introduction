@@ -1,5 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
-import path from "path";
+import * as dotenv from 'dotenv' 
+dotenv.config()
+
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -51,9 +53,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "work.ryo-sakaguchi.com",
+        bucketName: process.env.ISPROD ? process.env.PROD_S3_BUCKET : process.env.STG_S3_BUCKET,
         protocol: "https",
-        hostname: "work.ryo-sakaguchi.com"
+        hostname: process.env.ISPROD ? process.env.PROD_HOSTNAME : process.env.STG_HOSTNAME
       },
     },
   ]
