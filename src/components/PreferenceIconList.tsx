@@ -5,6 +5,7 @@ import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
 import { GiHamburgerMenu } from'@react-icons/all-files/gi/GiHamburgerMenu'
 import './PreferenceIconList.scss'
 import { PreferenceContext } from "./contexts/Preference";
+import { MenuContext } from "./contexts/Menu";
 
 
 const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
@@ -26,12 +27,12 @@ const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
 }
 
 const HamburgerMenuIcon = (): JSX.Element => {
-  const { showMenuPane, dispatch } = React.useContext(PreferenceContext)
+  const { showMenuPane, dispatch } = React.useContext(MenuContext)
   const onClick = () => {
     if(showMenuPane){
-      dispatch({type: "hideMenuPane", payload: undefined})
+      dispatch({type: "hideMenuPane", payload: ""})
     } else {
-      dispatch({type: "showMenuPane", payload: undefined})
+      dispatch({type: "showMenuPane", payload: ""})
     }
   }
 

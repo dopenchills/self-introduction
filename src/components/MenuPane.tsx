@@ -2,11 +2,12 @@ import * as React from 'react'
 import MenuList from './MenuList'
 import './MenuPane.scss'
 import { PreferenceContext } from './contexts/Preference'
+import { MenuContext } from './contexts/Menu'
 
 const MenuPane = (props: {className?: string}): JSX.Element => {
-  const { dispatch, showMenuPane } = React.useContext(PreferenceContext)
+  const { showMenuPane, dispatch } = React.useContext(MenuContext)
   const onClickTransparent = () => {
-    dispatch({type: 'hideMenuPane', payload: undefined})
+    dispatch({type: 'hideMenuPane', payload: ""})
   }
 
   return (

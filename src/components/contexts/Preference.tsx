@@ -7,13 +7,11 @@ type action = {
 }
 
 type preferenceState = {
-  isLightMode: boolean,
-  showMenuPane: boolean,
+  isLightMode: boolean
 }
 
 const initialPreferenceState = {
-  isLightMode: true,
-  showMenuPane: false
+  isLightMode: true
 }
 
 const initialContextValue = {
@@ -32,17 +30,6 @@ const preferenceReducer = (state: preferenceState, action: action): preferenceSt
       return {
         ...state,
         isLightMode: true
-      }
-    case 'showMenuPane':
-      return {
-        ...state,
-        showMenuPane: true
-      }
-    case 'hideMenuPane':
-      console.log("hide")
-      return {
-        ...state,
-        showMenuPane: false
       }
     default:
       return state

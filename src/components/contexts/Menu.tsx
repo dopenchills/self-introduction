@@ -8,12 +8,14 @@ type action = {
 
 type menuState = {
   selected: string,
-  hovered: string
+  hovered: string,
+  showMenuPane: boolean
 }
 
 const initialMenuState = {
   selected: "home",
-  hovered: ""
+  hovered: "",
+  showMenuPane: false
 }
 
 const initialContextValue = {
@@ -32,6 +34,17 @@ const menuReducer = (state: menuState, action: action): menuState => {
       return {
         ...state,
         selected: action.payload
+      }
+    case 'showMenuPane':
+      return {
+        ...state,
+        showMenuPane: true
+      }
+    case 'hideMenuPane':
+      console.log("hide")
+      return {
+        ...state,
+        showMenuPane: false
       }
     default:
       return state  
@@ -53,7 +66,6 @@ const MenuContextProvider = (props: {children: JSX.Element}): JSX.Element => {
       {props.children}
     </MenuContext.Provider>
   )
-
 }
 
 export default MenuContextProvider

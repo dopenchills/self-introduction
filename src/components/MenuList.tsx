@@ -37,7 +37,6 @@ const MenuList = (
     className?: string,
     value?: string,
   }): JSX.Element => {
-    const { dispatch: dispatchPreference } = React.useContext(PreferenceContext)
     const { selected, dispatch: dispatchMenu } = React.useContext(MenuContext)
   const menuOptionValues = [
     "home",
@@ -51,7 +50,7 @@ const MenuList = (
   }
 
   const onClick = () => {
-    dispatchPreference({type: "hideMenuPane", payload: undefined})
+    dispatchMenu({type: "hideMenuPane", payload: ""})
   }
   
   const menuOptions = menuOptionValues.map(value => {
