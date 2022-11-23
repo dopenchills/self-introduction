@@ -12,8 +12,6 @@
 }
 
 .menu-option {
-  display: block;
-  
   input {
     display: none;
   }
@@ -31,6 +29,7 @@
 
     padding: 0.5em 0.5em 0.5em 2em;
 
+    // disable selecting text as it is bothering
     user-select: none;
 
     &:hover {
