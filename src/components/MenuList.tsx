@@ -52,7 +52,7 @@ const MenuList = (
   const onClick = () => {
     dispatch({type: "hideMenuPane", payload: ""})
   }
-  
+
   const menuOptions = menuOptionValues.map(value => {
     if (value === selected) {
       return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} />
