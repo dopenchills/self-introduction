@@ -1,11 +1,16 @@
 import * as React from "react"
+
+// icons
 import { FaRegMoon } from "@react-icons/all-files/fa/FaRegMoon";
 import { FaRegSun } from "@react-icons/all-files/fa/FaRegSun";
 import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
 import { GiHamburgerMenu } from'@react-icons/all-files/gi/GiHamburgerMenu'
-import './PreferenceIconList.scss'
+
+// context
 import { PreferenceContext } from "./contexts/Preference";
 import { MenuContext } from "./contexts/Menu";
+
+import './PreferenceIconList.scss'
 
 
 const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
