@@ -30,12 +30,12 @@ const IndexPage: React.FC<PageProps> = () => {
           { ({ isLightMode }) => {
             return (
               <div id="display" className={`${isLightMode ? "" : "dark-mode"}`}>
-              <div id="whole-container">
-                <UpperContainer />
-                <LowerContainer />
-              </div>
-              <BackgroundSvg className="background" />
-              <MenuPane className="menu-pane-index" />
+                <div id="whole-container">
+                  <UpperContainer />
+                  <LowerContainer />
+                </div>
+                <BackgroundSvg className="background" />
+                <MenuPane className="menu-pane-index" />
             </div>    
             )
           }}
