@@ -3,7 +3,7 @@ import Tr from "../commons/Tr"
 import './Skills.scss'
 
 type Skill = {
-  name: string,
+  name: string | JSX.Element,
   year_including_hobby: string,
   year_including_intern: string,
   products: string[]
@@ -55,13 +55,13 @@ const Skills = (): JSX.Element => {
       name: "フロントエンド",
       skills: [
           {
-            name: "HTML, CSS, JavaScript",
+            name: <>HTML, CSS, Java<wbr/>Script</>,
             year_including_hobby: "1.5年",
             year_including_intern: "1年",
             products: ["Webサイト制作"]
           },
           {
-            name: "TypeScript",
+            name: <>Type<wbr/>Script</>,
             year_including_hobby: "1ヶ月",
             year_including_intern: "0",
             products: ["Webサイト制作"]
@@ -90,7 +90,7 @@ const Skills = (): JSX.Element => {
           products: ["業務上の調査"]
         },
         {
-          name: "PostgreSQL",
+          name: <>Postgre<wbr/>SQL</>,
           year_including_hobby: "6ヶ月",
           year_including_intern: "6ヶ月",
           products: ["Webアプリ"]
