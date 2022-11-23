@@ -18,7 +18,6 @@ const MenuOption = (
   const label                 = props.label  || props.value
   const id                    = `${name}-${props.value}`
 
-
   const onMouseEnter = () => {
     dispatch({type: "hovered", payload: props.value})
   }
