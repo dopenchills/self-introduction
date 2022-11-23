@@ -1,7 +1,4 @@
 import * as React from "react"
-import { CSSTransition } from "react-transition-group"
-import { useRef } from 'react';
-
 import { PreferenceContext } from "./contexts/Preference";
 
 // svg
@@ -21,69 +18,36 @@ import './BackgroundSvg.scss'
 
 const Clouds = (): JSX.Element => {
   const { isLightMode } = React.useContext(PreferenceContext)
-  const animatedCloudItems = [
+  const animatedCloudItems: {id: string, className: string, element: JSX.Element}[] = [
     {
       id: "cloud-big",
       className: "cloud cloud-big",
-      style: {top: 100},
       element: isLightMode ? <CloudBig width={300} height={100} /> : <CloudBigDark width={300} height={100} />,
-      nodeRef: useRef(null),
-      inState: React.useState(false),
-      timeout: {enter: 240000, exit: 10}
     },
     {
       id: "cloud-medium",
       className: "cloud cloud-medium",
-      style: {top: 100},
       element: isLightMode ? <CloudMedium width={200} height={100} /> : <CloudMediumDark width={200} height={100} />,
-      nodeRef: useRef(null),
-      inState: React.useState(false),
-      timeout: {enter: 480000, exit: 10}
     },
     {
       id: "cloud-small",
       className: "cloud cloud-small",
-      style: {top: 150},
       element: isLightMode ? <CloudSmall width={50} height={50} /> : <CloudSmallDark width={50} height={50} />,
-      nodeRef: useRef(null),
-      inState: React.useState(false),
-      timeout: {enter: 960000, exit: 10}
     }
   ]
 
-  React.useEffect(() => {
-    animatedCloudItems.map(item => {
-      const setIn = item.inState[1]
-      setIn(true)
-    })
-  }, [])
-
   return (
-    <>
+    <div>
       {
-        animatedCloudItems.map(({id, className, style, element, nodeRef, inState, timeout}) => {
-          const isIn  = inState[0]
-          const setIn = inState[1]
+        animatedCloudItems.map(({id, className, element}) => {
           return (
-            <CSSTransition
-              key={id}
-              nodeRef={nodeRef}
-              timeout={{enter: timeout.enter, exit: timeout.exit}}
-              classNames="cloud"
-              onEntered={() => {setTimeout(() => {setIn(false)}, 100)}}
-              onExited={()  => {setTimeout(() => {setIn(true)},  100)}}
-              in={isIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div className={className} style={style} ref={nodeRef}>
-                {element}
-              </div>
-            </CSSTransition>
+            <div id={id} className={className}>
+              {element}
+            </div>
           )
         })
       }
-    </>
+    </div>
   )
 }
 
