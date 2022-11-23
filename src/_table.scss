@@ -24,14 +24,14 @@ th {
 tr {
   tbody &:nth-of-type(odd) {
     background-color: color.$whitish-color-light-half;
-    &.dark-mode {
+    .dark-mode & {
       background-color: color.$black-like-color-dark-half;
     }
   }
 
   tbody &:hover {
     background-color: color.$whitish-color-light-quarter;
-    &.dark-mode {
+    .dark-mode & {
       background-color: color.$black-like-color-dark-quarter;
     }
   }

@@ -16,7 +16,7 @@
   color: color.$text-color-light;
   background: linear-gradient(to left top, color.$sky-color-light, color.$whitish-color-light);
 
-  &.dark-mode {
+  &.dark-mode  {
     color: color.$text-color-dark;
     background: linear-gradient(to left top, color.$black-like-color-dark, color.$sky-color-dark);
   }

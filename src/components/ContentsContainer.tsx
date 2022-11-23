@@ -9,7 +9,6 @@ import { MenuContext } from "./contexts/Menu"
 
 
 const ContentsContainer = (props: {className?: string}): JSX.Element => {
-  const { isLightMode } = React.useContext(PreferenceContext)
   const { selected, hovered } = React.useContext(MenuContext)
   const menuOptionValue = selected || "home"
   const contentsMap = new Map<string, JSX.Element>([
@@ -22,7 +21,7 @@ const ContentsContainer = (props: {className?: string}): JSX.Element => {
   const renderedValue = contentsMap.has(hovered) ? hovered : menuOptionValue
 
   return (
-    <main className={`contents-container ${props.className} ${isLightMode ? "" : "dark-mode"}`}>
+    <main className={`contents-container ${props.className}`}>
       {contentsMap.get(renderedValue)}
     </main>
   )

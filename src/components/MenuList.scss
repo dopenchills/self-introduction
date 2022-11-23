@@ -23,7 +23,7 @@
 
     // color
     background-color: color.$whitish-color-light-half;
-    &.dark-mode {
+    .dark-mode & {
       background-color: color.$black-like-color-dark-half;
     }
 
@@ -34,7 +34,7 @@
 
     &:hover {
       background-color: color.$whitish-color-light-quarter;
-      &.dark-mode {
+      .dark-mode & {
         background-color: color.$black-like-color-dark-quarter;
       }
     }
@@ -42,7 +42,7 @@
 
   input:checked + label {
     background-color: color.$whitish-color-light;
-    &.dark-mode {
+    .dark-mode & {
       background-color: color.$grey-like-color;
     }
   }

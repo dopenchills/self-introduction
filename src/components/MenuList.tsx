@@ -11,7 +11,6 @@ const MenuOption = (
     label?: string,
     checked?: boolean,
   }): JSX.Element => {
-  const { isLightMode } = React.useContext(PreferenceContext)
   const { dispatch } = React.useContext(MenuContext)
 
   const name                  = props.name   || "menu"
@@ -27,7 +26,7 @@ const MenuOption = (
   return (
     <div className={`menu-option ${props.className}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
       <input type="radio" name={name} value={props.value} id={id} checked={props.checked} readOnly={true} />
-      <label htmlFor={id} className={`${isLightMode ? "" : "dark-mode"}`}>{label}</label>
+      <label htmlFor={id}>{label}</label>
     </div>
   )
 }
