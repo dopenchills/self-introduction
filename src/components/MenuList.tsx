@@ -49,10 +49,6 @@ const MenuList = (
     dispatch({type: "selected", payload: event.target.value})
   }
 
-  const onClick = () => {
-    dispatch({type: "hideMenuPane", payload: ""})
-  }
-
   const menuOptions = menuOptionValues.map(value => {
     if (value === selected) {
       return <MenuOption key={value} className="flex-item" name="menu" value={value} label={value.toUpperCase()} checked={true} />
@@ -61,7 +57,7 @@ const MenuList = (
   })
 
   return (
-    <div className={`menu-list ${props.className}`} onChange={onMenuListChange} onClick={onClick}>
+    <div className={`menu-list ${props.className}`} onChange={onMenuListChange}>
       {menuOptions}
     </div>
   )
