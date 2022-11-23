@@ -11,6 +11,10 @@ import { GiHamburgerMenu } from'@react-icons/all-files/gi/GiHamburgerMenu'
 import { PreferenceContext } from "./contexts/Preference";
 import { MenuContext } from "./contexts/Menu";
 
+// constants
+import { BouncyIconProps } from "../constants/FramerMotion";
+
+// scss
 import './PreferenceIconList.scss'
 
 
@@ -29,9 +33,7 @@ const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
     <li className="preference-icon-item" onClick={onClick}>
       <motion.div
         key="lightordarkmoonicon"
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        {...BouncyIconProps}
       >
         {isLightMode ? <FaRegMoon className="preference-icon" /> : <FaRegSun className="preference-icon" />}
       </motion.div>
@@ -45,10 +47,8 @@ const HamburgerMenuIcon = (): JSX.Element => {
   return (
     <li className="preference-icon-item hamburger-menu-icon" onClick={() => dispatch({type: "showMenuPane", payload: ""})}>
       <motion.div
-      key="hamburgermenu"
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        key="hamburgermenu"
+        {...BouncyIconProps}
       >
         <GiHamburgerMenu className="preference-icon"  />
       </motion.div>

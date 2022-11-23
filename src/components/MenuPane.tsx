@@ -4,6 +4,7 @@ import { MenuContext } from './contexts/Menu'
 import { motion, AnimatePresence } from 'framer-motion'
 import { GoX } from'@react-icons/all-files/go/GoX'
 import './MenuPane.scss'
+import { BouncyIconProps } from '../constants/FramerMotion'
 
 
 const MenuPane = (props: {className?: string}): JSX.Element => {
@@ -32,9 +33,7 @@ const MenuPane = (props: {className?: string}): JSX.Element => {
         <div className='menu'>
           <motion.div
             key="gox"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            {...BouncyIconProps}
             className="x-menu-pane"
           >
             <GoX className="preference-icon" onClick={() => dispatch({type: "hideMenuPane", payload: ""})} />
