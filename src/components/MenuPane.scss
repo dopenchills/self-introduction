@@ -18,5 +18,8 @@
 
   .menu {
     background-color: color.$grey-like-color;
+    .dark-mode & {
+      background-color: color.$whitish-color-light;
+    }
   }
 }
