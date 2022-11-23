@@ -21,40 +21,38 @@ const initialContextValue = {
   dispatch: (() => {}) as Dispatch<action>
 }
 
+const preferenceReducer = (state: preferenceState, action: action): preferenceState => {
+  switch (action.type) {
+    case 'toDarkMode':
+      return {
+        ...state,
+        isLightMode: false
+      }
+    case 'toLightMode':
+      return {
+        ...state,
+        isLightMode: true
+      }
+    case 'showMenuPane':
+      return {
+        ...state,
+        showMenuPane: true
+      }
+    case 'hideMenuPane':
+      console.log("hide")
+      return {
+        ...state,
+        showMenuPane: false
+      }
+    default:
+      return state
+  }
+}
+
 export const PreferenceContext = React.createContext(initialContextValue)
 
 const PreferencesContextProvider = (props: {children: JSX.Element}): JSX.Element => {
-  const [state, dispatch] = React.useReducer(
-    // reducer
-    (state: preferenceState, action: action): preferenceState => {
-      switch (action.type) {
-        case 'toDarkMode':
-          return {
-            ...state,
-            isLightMode: false
-          }
-        case 'toLightMode':
-          return {
-            ...state,
-            isLightMode: true
-          }
-        case 'showMenuPane':
-          return {
-            ...state,
-            showMenuPane: true
-          }
-        case 'hideMenuPane':
-          console.log("hide")
-          return {
-            ...state,
-            showMenuPane: false
-          }
-        default:
-          return state
-      }
-    },
-    initialPreferenceState
-    )
+  const [state, dispatch] = React.useReducer(preferenceReducer, initialPreferenceState)
 
     const contextValue = {
       ...state,

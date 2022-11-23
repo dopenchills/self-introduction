@@ -21,28 +21,27 @@ const initialContextValue = {
   dispatch: (() => {}) as Dispatch<action>
 }
 
+const menuReducer = (state: menuState, action: action): menuState => {
+  switch (action.type) {
+    case 'hovered':
+      return {
+        ...state,
+        hovered: action.payload
+      }
+    case 'selected':
+      return {
+        ...state,
+        selected: action.payload
+      }
+    default:
+      return state  
+  }
+}
+
 export const MenuContext = React.createContext(initialContextValue)
 
 const MenuContextProvider = (props: {children: JSX.Element}): JSX.Element => {
-  const [state, dispatch] = React.useReducer(
-    (state: menuState, action: action): menuState => {
-      switch (action.type) {
-        case 'hovered':
-          return {
-            ...state,
-            hovered: action.payload
-          }
-        case 'selected':
-          return {
-            ...state,
-            selected: action.payload
-          }
-        default:
-          return state  
-      }
-    },
-    initialMenuState
-  )
+  const [state, dispatch] = React.useReducer(menuReducer, initialMenuState)
 
   const contextValue = {
     ...state,
