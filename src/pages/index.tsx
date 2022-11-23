@@ -10,7 +10,19 @@ import BackgroundSvg from "../components/BackgroundSvg"
 import MenuPane from "../components/MenuPane"
 import TopLevelContext from "../components/contexts/TopLevel"
 
+const setVh = () => {
+  const vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+
 const IndexPage: React.FC<PageProps> = () => {
+  if (typeof window === 'undefined') {
+    return <></>
+  }
+
+  setVh()
+  window.addEventListener('resize', setVh)
+
   return (
     <TopLevelContext>
       <PreferencesContextProvider>
