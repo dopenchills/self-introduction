@@ -12,6 +12,7 @@ const Home = (): JSX.Element => {
         width={300}
         height={300}
         className="profile-image"
+        placeholder="blurred"
       />
       <p>
         プログラミングが好きで、WebサイトやWebアプリケーション、Web APIなどを趣味で開発しています。
