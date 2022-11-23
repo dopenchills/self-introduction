@@ -116,22 +116,19 @@ const ObjectsOnGround = (): JSX.Element => {
   const verticalOffsetMargin = 5  // in order to hide white area under the svg
   const verticalOffset   = windowSize.height - svgRenderHeight + verticalOffsetMargin
 
+  const commonProps = {
+    className: "background-svg",
+    width: windowSize.width,
+    height: svgRenderHeight,
+    style: {top: verticalOffset}
+  }
+
   return (
     <>
     {
       isLightMode ?
-        <Background
-        className="background-svg"
-        width={windowSize.width}
-        height={svgRenderHeight}
-        style={{top: verticalOffset}}
-      /> :
-      <BackgroundDark
-        className="background-svg"
-        width={windowSize.width}
-        height={svgRenderHeight}
-        style={{top: verticalOffset}}
-      />
+        <Background {...commonProps} /> :
+        <BackgroundDark {...commonProps} />
      }
     </>
   )
