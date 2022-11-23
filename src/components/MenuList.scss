@@ -43,7 +43,7 @@
   input:checked + label {
     background-color: color.$whitish-color-light;
     .dark-mode & {
-      background-color: color.$grey-like-color;
+      background-color: color.$sky-color-dark;
     }
   }
 }
