@@ -1,7 +1,9 @@
 import { HTMLMotionProps } from 'framer-motion'
 
 export const BouncyIconProps: HTMLMotionProps<'div'> = {
-  whileHover: { scale: 1.2 },
-  whileTap: { scale: 0.9 },
-  transition: { type: "spring", stiffness: 400, damping: 17 },
+  whileTap: { scale: 0.7, opacity: 0 },
+  transition: {
+    type: "tween",
+    duration: 0.2
+  },
 }
