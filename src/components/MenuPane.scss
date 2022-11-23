@@ -21,5 +21,16 @@
     .dark-mode & {
       background-color: color.$whitish-color-light;
     }
+
+    // flex-parent
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  
+    .x-menu-pane {
+      align-self: flex-end;
+    }
   }
 }

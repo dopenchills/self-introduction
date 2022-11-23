@@ -1,8 +1,9 @@
 import * as React from 'react'
 import MenuList from './MenuList'
-import './MenuPane.scss'
 import { MenuContext } from './contexts/Menu'
 import { motion, AnimatePresence } from 'framer-motion'
+import { GoX } from'@react-icons/all-files/go/GoX'
+import './MenuPane.scss'
 
 
 const MenuPane = (props: {className?: string}): JSX.Element => {
@@ -28,7 +29,18 @@ const MenuPane = (props: {className?: string}): JSX.Element => {
           }}
         >
         <div className='menu-pane-transparent' onClick={onClickTransparent}></div>
-        <MenuList className='menu'/>
+        <div className='menu'>
+          <motion.div
+            key="gox"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="x-menu-pane"
+          >
+            <GoX className="preference-icon" onClick={() => dispatch({type: "hideMenuPane", payload: ""})} />
+          </motion.div>
+          <MenuList />
+        </div>
       </motion.div>
     }
     </AnimatePresence>

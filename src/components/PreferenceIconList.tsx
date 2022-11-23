@@ -1,4 +1,5 @@
 import * as React from "react"
+import { motion } from 'framer-motion'
 
 // icons
 import { FaRegMoon } from "@react-icons/all-files/fa/FaRegMoon";
@@ -26,24 +27,31 @@ const LightOrDarkModeIcon = (props: {className?: string}): JSX.Element => {
 
   return (
     <li className="preference-icon-item" onClick={onClick}>
-      {isLightMode ? <FaRegMoon className="preference-icon" /> : <FaRegSun className="preference-icon" />}
+      <motion.div
+        key="lightordarkmoonicon"
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        {isLightMode ? <FaRegMoon className="preference-icon" /> : <FaRegSun className="preference-icon" />}
+      </motion.div>
     </li>
   )
 }
 
 const HamburgerMenuIcon = (): JSX.Element => {
-  const { showMenuPane, dispatch } = React.useContext(MenuContext)
-  const onClick = () => {
-    if(showMenuPane){
-      dispatch({type: "hideMenuPane", payload: ""})
-    } else {
-      dispatch({type: "showMenuPane", payload: ""})
-    }
-  }
+  const { dispatch } = React.useContext(MenuContext)
 
   return (
-    <li className="preference-icon-item hamburger-menu-icon" onClick={onClick}>
-      <GiHamburgerMenu className="preference-icon" />
+    <li className="preference-icon-item hamburger-menu-icon" onClick={() => dispatch({type: "showMenuPane", payload: ""})}>
+      <motion.div
+      key="hamburgermenu"
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      >
+        <GiHamburgerMenu className="preference-icon"  />
+      </motion.div>
     </li>
   )
 }
