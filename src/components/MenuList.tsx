@@ -37,7 +37,7 @@ const MenuList = (
     className?: string,
     value?: string,
   }): JSX.Element => {
-    const { selected, dispatch: dispatchMenu } = React.useContext(MenuContext)
+    const { selected, dispatch } = React.useContext(MenuContext)
   const menuOptionValues = [
     "home",
     "skills",
@@ -46,11 +46,11 @@ const MenuList = (
   ]
 
   const onMenuListChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    dispatchMenu({type: "selected", payload: event.target.value})
+    dispatch({type: "selected", payload: event.target.value})
   }
 
   const onClick = () => {
-    dispatchMenu({type: "hideMenuPane", payload: ""})
+    dispatch({type: "hideMenuPane", payload: ""})
   }
   
   const menuOptions = menuOptionValues.map(value => {
