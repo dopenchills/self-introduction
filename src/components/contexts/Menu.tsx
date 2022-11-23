@@ -33,6 +33,7 @@ const menuReducer = (state: menuState, action: action): menuState => {
     case 'selected':
       return {
         ...state,
+        showMenuPane: false,
         selected: action.payload
       }
     case 'showMenuPane':
