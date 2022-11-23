@@ -41,7 +41,6 @@ const menuReducer = (state: menuState, action: action): menuState => {
         showMenuPane: true
       }
     case 'hideMenuPane':
-      console.log("hide")
       return {
         ...state,
         showMenuPane: false

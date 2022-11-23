@@ -70,8 +70,8 @@ const Clouds = (): JSX.Element => {
               nodeRef={nodeRef}
               timeout={{enter: timeout.enter, exit: timeout.exit}}
               classNames="cloud"
-              onEntered={() => {console.log("entered"); setTimeout(() => {setIn(false)}, 100)}}
-              onExited={()  => {console.log("exited");  setTimeout(() => {setIn(true)},  100)}}
+              onEntered={() => {setTimeout(() => {setIn(false)}, 100)}}
+              onExited={()  => {setTimeout(() => {setIn(true)},  100)}}
               in={isIn}
               mountOnEnter
               unmountOnExit
