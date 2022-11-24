@@ -1,0 +1,42 @@
+name: deploy-to-prod
+run-name: ${{ github.actor }} is deploying to prod
+env:
+  STG_S3_BUCKET: ${{ secrets.STG_S3_BUCKET }}
+  STG_HOSTNAME: ${{ secrets.STG_HOSTNAME }}
+  PROD_S3_BUCKET: ${{ secrets.PROD_S3_BUCKET }}
+  PROD_HOSTNAME: ${{ secrets.PROD_HOSTNAME }}
+  ISPROD: true
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy-to-prod:
+    name: Deploy to Production Environment
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME_DEPLOY_TO_S3 }}
+          aws-region: ${{ secrets.REGION_DEPLOY_TO_S3 }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to S3
+        run: npm run deploy
