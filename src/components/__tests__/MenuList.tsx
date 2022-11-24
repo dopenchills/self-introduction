@@ -1,10 +1,9 @@
 import * as React from "react"
 import renderer from "react-test-renderer"
-import {render, fireEvent, waitFor, screen} from '../../../utils/test-utils'
+import {render, fireEvent, screen} from '../../../utils/test-utils'
 import '@testing-library/jest-dom'
 
 import { MenuOption } from "../MenuList"
-import { Exception } from "sass"
 
 describe(`MenuOption`, () => {
   it(`has the same snapshot`, () => {
