@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuOption has the same snapshot 1`] = `
+<div
+  className="menu-option undefined"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    checked={true}
+    id="menu-portfolio"
+    name="menu"
+    readOnly={true}
+    type="radio"
+    value="portfolio"
+  />
+  <label
+    htmlFor="menu-portfolio"
+  >
+    PORTFOLIO
+  </label>
+</div>
+`;

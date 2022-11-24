@@ -3,7 +3,7 @@ import { PreferenceContext } from "./contexts/Preference"
 import { MenuContext } from "./contexts/Menu"
 import './MenuList.scss'
 
-const MenuOption = (
+export const MenuOption = (
   props: {
     className?: string,
     name?: string,
