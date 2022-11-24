@@ -1,9 +1,10 @@
 import * as React from "react"
 import renderer from "react-test-renderer"
-import * as Gatsby from "gatsby"
-import {cleanup, fireEvent, render} from '@testing-library/react'
+import {render, fireEvent, waitFor, screen} from '../../../utils/test-utils'
+import '@testing-library/jest-dom'
 
 import { MenuOption } from "../MenuList"
+import { Exception } from "sass"
 
 describe(`MenuOption`, () => {
   it(`has the same snapshot`, () => {
@@ -12,5 +13,20 @@ describe(`MenuOption`, () => {
     )
     let tree = component.toJSON()
     expect(tree).toMatchSnapshot()
+  })
+
+  it(`shows label text`, async () => {
+    const value = "portfolio"
+    const label = value.toUpperCase()
+    render(<MenuOption name="menu" value={value} label={label} checked={false} />)
+    expect(screen.getByText(label)).toHaveTextContent(label)
+  })
+
+  it(`is checked on click`, async () => {
+    const value = "portfolio"
+    const label = value.toUpperCase()
+    render(<MenuOption name="menu" value={value} label={label} checked={false} />)
+    fireEvent.click(screen.getByText(label))
+    expect(screen.getByLabelText(label)).toBeChecked
   })
 })
