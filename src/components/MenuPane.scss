@@ -17,9 +17,11 @@
   }
 
   .menu {
-    background-color: color.$grey-like-color;
+    background: linear-gradient(to top left, color.$sky-color-light, 70%, color.$whitish-color-light);
+    box-shadow: -5px 0 10px color.$whitish-color-light-quarter;
     .dark-mode & {
-      background-color: color.$grey-like-color;
+      background: linear-gradient(to left top, color.$black-like-color-dark, 70%, color.$sky-color-dark);
+      box-shadow: -5px 0 10px color.$black-like-color-dark-quarter;
     }
 
     // flex-parent
