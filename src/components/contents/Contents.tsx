@@ -4,8 +4,16 @@ import { RegularAfterLoadProps } from "../../constants/FramerMotion"
 import './Contents.scss'
 
 const Contents = (props: {children: JSX.Element}): JSX.Element => {
+  const ref = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (ref.current != null){
+      ref.current.scrollIntoView()
+    }
+  })
+
   return (
-    <motion.div {...RegularAfterLoadProps} >
+    <motion.div {...RegularAfterLoadProps} ref={ref} >
       {props.children}
     </motion.div>
   )
