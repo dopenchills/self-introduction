@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import AnimatedContents from "./AnimatedContents"
+import Contents from "./Contents"
 
 
 const Portfolio = (): JSX.Element => {
@@ -20,13 +20,13 @@ const Portfolio = (): JSX.Element => {
   const { title } = data.markdownRemark.frontmatter
   const {html, tableOfContents} = data.markdownRemark
   return (
-    <AnimatedContents>
+    <Contents>
       <article>
         <h2>{title}</h2>
         <div className="markdown-toc" dangerouslySetInnerHTML={{ __html: tableOfContents}}></div>
         <div dangerouslySetInnerHTML={{ __html: html}}></div>
       </article>
-    </AnimatedContents>
+    </Contents>
   )
 }
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { RegularAfterLoadProps } from "../../constants/FramerMotion"
 import './Contents.scss'
 
-const AnimatedContents = (props: {children: JSX.Element}): JSX.Element => {
+const Contents = (props: {children: JSX.Element}): JSX.Element => {
   return (
     <motion.div {...RegularAfterLoadProps} >
       {props.children}
@@ -11,4 +11,4 @@ const AnimatedContents = (props: {children: JSX.Element}): JSX.Element => {
   )
 }
 
-export default AnimatedContents
+export default Contents

@@ -1,12 +1,12 @@
 import * as React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import "./Home.scss"
-import AnimatedContents from "./AnimatedContents"
+import Contents from "./Contents"
 
 
 const Home = (): JSX.Element => {
   return (
-    <AnimatedContents>
+    <Contents>
       <article className="home">
         <StaticImage
           src="../../images/profile-image.jpeg"
@@ -34,7 +34,7 @@ const Home = (): JSX.Element => {
         </p>
 
       </article>
-    </AnimatedContents>
+    </Contents>
   )
 }
 

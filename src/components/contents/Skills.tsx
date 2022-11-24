@@ -1,7 +1,7 @@
 import * as React from "react"
 import Tr from "../commons/Tr"
 import './Skills.scss'
-import AnimatedContents from "./AnimatedContents"
+import Contents from "./Contents"
 
 
 type Skill = {
@@ -129,7 +129,7 @@ const Skills = (): JSX.Element => {
     }
   ]
   return (
-    <AnimatedContents>    
+    <Contents>    
       <article className="skills">  
         {
           skillGroups.map((skillgroup) => {
@@ -181,7 +181,7 @@ const Skills = (): JSX.Element => {
         })
       }
       </article>
-    </AnimatedContents>
+    </Contents>
   )
 }
 

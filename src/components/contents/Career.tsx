@@ -1,11 +1,11 @@
 import * as React from "react"
 import Tr from "../commons/Tr"
 import "./Career.scss"
-import AnimatedContents from "./AnimatedContents"
+import Contents from "./Contents"
 
 const Career = (): JSX.Element => {
   return (
-    <AnimatedContents>
+    <Contents>
       <article className="career">
         <section>
           <h2>職歴</h2>
@@ -101,7 +101,7 @@ const Career = (): JSX.Element => {
           </table>
         </section>
       </article>
-    </AnimatedContents>
+    </Contents>
   )
 }
 
