@@ -1,4 +1,5 @@
-@import './table';
+@use './color';
+@use './table';
 
 * {
   // prevent unintentional overflow
@@ -30,6 +31,24 @@ p,
 p {
   margin-top: 36px;
   margin-bottom: 36px;
+}
+
+a {
+  &:link, &:visited {
+    color: color.$text-color-light;
+  }
+  &:hover  {
+    color: color.$grey-like-color;
+  }
+
+  .dark-mode & {
+    &:link, &:visited {
+      color: color.$text-color-dark;
+    }
+    &:hover  {
+      color: color.$accent-color-bright;
+    }  
+  }
 }
 
 ul {

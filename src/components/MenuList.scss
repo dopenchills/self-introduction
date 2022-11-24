@@ -39,9 +39,9 @@
       }
     }
 
-    box-shadow: inset 0 0 5px 2px color.$whitish-color-light;
+    box-shadow: inset 0 0 3px 0.5px color.$whitish-color-light;
     .dark-mode & {
-      box-shadow: inset 0 0 5px 2px color.$grey-like-color;
+      box-shadow: inset 0 0 3px 0.5px color.$grey-like-color;
     }
   }
 
