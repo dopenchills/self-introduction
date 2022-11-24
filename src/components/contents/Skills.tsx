@@ -147,8 +147,8 @@ const Skills = (): JSX.Element => {
                 <thead>
                   <Tr className="header">
                     <th scope="col"></th>
-                    <th scope="col">経験年数<sup>*1</sup></th>
-                    <th scope="col">経験年数<sup>*2</sup></th>
+                    <th className="align-right" scope="col">経験<sup>*1</sup></th>
+                    <th className="align-right" scope="col">経験<sup>*2</sup></th>
                     <th scope="col">用途</th>
                   </Tr>
                 </thead>

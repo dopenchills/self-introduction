@@ -15,10 +15,10 @@ article.skills{
   
   td, th {
     text-overflow: ellipsis;
-  }
 
-  & td.align-right {
-    text-align: right;
+    &.align-right {
+      text-align: right;
+    }
   }
 
   .product-item {
