@@ -6,11 +6,9 @@ import './Contents.scss'
 const Contents = (props: {children: JSX.Element}): JSX.Element => {
   const ref = React.useRef<HTMLDivElement>(null)
 
-  React.useEffect(() => {
-    if (ref.current != null){
-      ref.current.scrollIntoView()
-    }
-  })
+  if (ref.current != null){
+    ref.current.scrollIntoView()
+  }
 
   return (
     <motion.div {...RegularAfterLoadProps} ref={ref} >
