@@ -7,7 +7,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Ryo Sakaguchi`,
     description: `はじめまして。坂口 諒です。`,
-    siteUrl: `http://work.ryo-sakaguchi.com`,
+    siteUrl: `https://work.ryo-sakaguchi.com`,
     twitterUsername: `@dopenchills`,
     image: `/images/icon.png`,
   },
