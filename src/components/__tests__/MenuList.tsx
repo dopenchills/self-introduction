@@ -26,6 +26,12 @@ describe(`MenuOption`, () => {
 })
 
 describe(`MenuList`, () => {
+  it(`has the same snapshot`, () => {
+    const component = renderer.create(<MenuList />)
+    let tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+  
   it(`has home radio button that is initially checked`, () => {
     render(<MenuList />)
     expect((screen.getByLabelText("HOME") as HTMLInputElement).checked).toBe(true)
