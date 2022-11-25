@@ -1,5 +1,6 @@
 import * as React from "react"
 import { MenuContext } from "./contexts/Menu"
+import { onMouseEnterProps, onMouseLeaveProps } from "./commons/responsive"
 import './MenuList.scss'
 
 export const MenuOption = (
@@ -23,7 +24,7 @@ export const MenuOption = (
     dispatch({type: "hovered", payload: ""})
   }
   return (
-    <div className={`menu-option ${props.className}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
+    <div className={`menu-option ${props.className}`} {...onMouseEnterProps(onMouseEnter)} {...onMouseLeaveProps(onMouseLeave)} >
       <input type="radio" name={name} value={props.value} id={id} checked={props.checked} readOnly={true} />
       <label htmlFor={id}>{label}</label>
     </div>
