@@ -14,7 +14,7 @@ const Career = (): JSX.Element => {
           </colgroup>
           <thead>
             <tr>
-              <th>年月</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -54,7 +54,7 @@ const Career = (): JSX.Element => {
           </colgroup>
           <thead>
             <tr>
-              <th>年月</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
