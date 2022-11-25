@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
     description: `はじめまして。坂口 諒です。`,
     siteUrl: `http://work.ryo-sakaguchi.com`,
     twitterUsername: `@dopenchills`,
-    image: `/src/images/icon.svg`,
+    image: `/images/icon.svg`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
