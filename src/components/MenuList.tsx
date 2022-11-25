@@ -33,9 +33,8 @@ export const MenuOption = (
 const MenuList = (
   props: {
     className?: string,
-    value?: string,
   }): JSX.Element => {
-    const { selected, dispatch } = React.useContext(MenuContext)
+  const { selected, dispatch } = React.useContext(MenuContext)
   const menuOptionValues = [
     "home",
     "skills",

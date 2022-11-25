@@ -41,7 +41,7 @@ const Clouds = (): JSX.Element => {
       {
         animatedCloudItems.map(({id, className, element}) => {
           return (
-            <div id={id} className={className}>
+            <div id={id} key={id} className={className}>
               {element}
             </div>
           )
