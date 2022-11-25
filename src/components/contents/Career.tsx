@@ -22,22 +22,22 @@ const Career = (): JSX.Element => {
           <tbody>
             <tr>
               <td>2019年11月</td>
-              <td>株式会社CAMI&Co. (インターン)</td>
+              <td>株式会社CAMI&Co.<br /><small>インターン</small></td>
               <td>入社</td>
             </tr>
             <tr>
               <td>2020年7月</td>
-              <td>株式会社CAMI&Co. (インターン)</td>
+              <td>同上</td>
               <td>退職</td>
             </tr>
             <tr>
               <td>2022年4月</td>
-              <td>楽天グループ株式会社 入社</td>
+              <td>楽天グループ株式会社</td>
               <td>入社</td>
             </tr>
             <tr>
               <td>2022年11月</td>
-              <td>楽天グループ株式会社 退職</td>
+              <td>同上</td>
               <td>退職</td>
             </tr>
           </tbody>
@@ -62,36 +62,32 @@ const Career = (): JSX.Element => {
           <tbody>
             <tr>
               <td>2012年4月</td>
-              <td>神奈川県立横浜翠嵐高等学校 普通科</td>
+              <td>神奈川県立横浜翠嵐高等学校<br /><small>普通科</small></td>
               <td>入学</td>
             </tr>
             <tr>
               <td>2015年3月</td>
-              <td>神奈川県立横浜翠嵐高等学校 普通科</td>
+              <td>同上</td>
               <td>卒業</td>
             </tr>
             <tr>
               <td>2015年4月</td>
-              <td>私立国際基督教大学 教養学部 アーツサイエンス学科</td>
+              <td>私立国際基督教大学<br /><small>教養学部 アーツサイエンス学科</small></td>
               <td>入学</td>
             </tr>
             <tr>
-              <td></td>
-              <td>2018年9月から2019年5月までオランダ王国ティルブルフ大学にて交換留学</td>
-            </tr>
-            <tr>
               <td>2020年3月</td>
-              <td>私立国際基督教大学 教養学部 アーツサイエンス学科</td>
+              <td>同上</td>
               <td>卒業</td>
             </tr>
             <tr>
               <td>2020年4月</td>
-              <td>国立電気通信大学 情報理工学研究科 機械知能システム学専攻</td>
+              <td>国立電気通信大学<br /><small>情報理工学研究科 機械知能システム学専攻</small></td>
               <td>入学</td>
             </tr>
             <tr>
               <td>2022年3月</td>
-              <td>国立電気通信大学 情報理工学研究科 機械知能システム学専攻</td>
+              <td>同上</td>
               <td>卒業</td>
             </tr>
           </tbody>
