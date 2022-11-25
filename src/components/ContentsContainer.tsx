@@ -27,14 +27,12 @@ const ContentsContainer = (props: {className?: string}): JSX.Element => {
 
   return (
     <main className={`contents-container ${props.className}`}>
-      <div data-rendered={
-        /* used to re-render to trigger animation */
+      <motion.div {...RegularAfterLoadProps} key={
+        // force re-render on renderedValud changes
         renderedValue
       }>
-        <motion.div {...RegularAfterLoadProps}>
-          {contentsMap.get(renderedValue)}
-        </motion.div>
-      </div>
+        {contentsMap.get(renderedValue)}
+      </motion.div>
     </main>
   )
 }
