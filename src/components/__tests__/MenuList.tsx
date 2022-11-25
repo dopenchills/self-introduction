@@ -19,7 +19,7 @@ describe(`MenuOption`, () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it(`shows label text`, async () => {
+  it(`shows label text`, () => {
     render(<MenuOption name={name} value={value} label={label} checked={false} />)
     expect(screen.getByText(label)).toHaveTextContent(label)
   })
