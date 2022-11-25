@@ -33,13 +33,10 @@
     // disable selecting text as it is bothering
     user-select: none;
 
-    // disable hover in smartphone
-    @media (min-width: responsive.$responsive-sp-lteq) {
-      &:hover {
-        background-color: color.$whitish-color-light-quarter;
-        .dark-mode & {
-          background-color: color.$black-like-color-dark-quarter;
-        }
+    &:hover {
+      background-color: color.$whitish-color-light-quarter;
+      .dark-mode & {
+        background-color: color.$black-like-color-dark-quarter;
       }
     }
 
