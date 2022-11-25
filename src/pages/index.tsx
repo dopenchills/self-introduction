@@ -9,6 +9,7 @@ import PreferencesContextProvider, { PreferenceContext } from "../components/con
 import BackgroundSvg from "../components/BackgroundSvg"
 import MenuPane from "../components/MenuPane"
 import TopLevelContext from "../components/contexts/TopLevel"
+import SEO from "../components/SEO"
 
 const setVh = () => {
   const vh = window.innerHeight * 0.01
@@ -47,4 +48,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Ryo Sakaguchi</title>
+export const Head: HeadFC = () => <SEO />
