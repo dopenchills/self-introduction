@@ -1,5 +1,6 @@
 .background-div {
   position: relative;
+  filter: url(#fe-blur);
 
   .background-svg {
     position: absolute;

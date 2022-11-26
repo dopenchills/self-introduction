@@ -115,6 +115,11 @@ const Background = (props: {className?: string}): JSX.Element => {
 
   return (
     <div className={`background-div ${props.className}`}>
+      <svg height={0}>
+        <filter id="fe-blur">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+        </filter>
+      </svg>
       <Clouds />
       <ObjectsOnGround />
       { 
