@@ -86,53 +86,6 @@
   }
 }
 
-#lower-container {
-  // size
-  height: 100vh;
-
-  // flexbox-parent
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: space-between;
-  gap: 0;
-
-  margin-top: 2em;
-  @media (max-width: responsive.$responsive-sp-lteq) {
-    margin-top: 0.5em;
-  }
-
-  .flex-item-main {
-    min-width: 60%;
-    height: 100%;
-
-    width: 70%;
-    margin-right: 2em;
-    @media (max-width: responsive.$responsive-sp-lteq) {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
-
-  .flex-item-menu {
-    // size
-    min-width: 10%;
-    width: 20%;
-    flex-shrink: 0;
-
-    // position
-    align-self: flex-end;
-
-    @media (max-width: responsive.$responsive-sp-lteq) {
-      display: none;
-    }
-  }
-
-  overflow: hidden;
-}
-
 #preference-icon-list {
   // flexbox-children
   flex-basis: content;
