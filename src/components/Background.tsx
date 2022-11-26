@@ -99,35 +99,44 @@ const ObjectsOnGround = (): JSX.Element => {
   )
 }
 
+const Leaves = (): JSX.Element => {
+  return (
+    <div className="leaves">
+      {
+        Array(3).fill(
+          <div className="falling">
+            <StaticImage
+              src="../images/Leaf.png"
+              alt="leaf"
+              className="flipping-leaf"
+              placeholder="blurred"
+            />
+          </div>
+        )
+      }
+    </div>
+  )
+}
+
+const BlurEffect = () => {
+  return (
+    <svg height={0}>
+      <filter id="fe-blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      </filter>
+    </svg>
+  )
+}
+
 const Background = (props: {className?: string}): JSX.Element => {
   const { isLightMode } = React.useContext(PreferenceContext)
 
-  const leaves = Array(3).fill(
-    <div className="falling">
-      <StaticImage
-        src="../images/Leaf.png"
-        alt="leaf"
-        className="flipping-leaf"
-        placeholder="blurred"
-      />
-    </div>
-  )
-
   return (
     <div className={`background-div ${props.className}`}>
-      <svg height={0}>
-        <filter id="fe-blur">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-        </filter>
-      </svg>
+      <BlurEffect />
       <Clouds />
       <ObjectsOnGround />
-      { 
-        isLightMode &&  
-          <div className="leaves">
-            {leaves}
-          </div>        
-      }
+      { isLightMode &&  <Leaves /> }
     </div>
   )
 }
