@@ -128,9 +128,9 @@ const Skills = (): JSX.Element => {
   return (
     <article className="skills">  
       {
-        skillGroups.map((skillgroup) => {
+        skillGroups.map((skillgroup, skillgroupIndex) => {
         return (
-          <>
+          <div key={skillgroupIndex}>
             <h2>{skillgroup.name}</h2>
             <table>
               <colgroup>
@@ -151,17 +151,15 @@ const Skills = (): JSX.Element => {
 
               <tbody>
                 {
-                  skillgroup.skills.map((skill, index) => {
+                  skillgroup.skills.map((skill, skillIndex) => {
                     return (
-                      <tr>
+                      <tr key={skillIndex}>
                         <th scope="row" className="skill-name">{skill.name}</th>
                         <td className="align-right">{skill.year_including_hobby}</td>
                         <td className="align-right">{skill.year_including_intern}</td>
-                        <td>{skill.products.map((product, index) => {
+                        <td>{skill.products.map((product, productIndex) => {
                           return (
-                            <>
-                              <span className="product-item">{product}{index !== skill.products.length ? <br /> : null}</span>
-                            </>
+                              <span className="product-item" key={productIndex}>{product}{productIndex !== skill.products.length ? <br /> : null}</span>
                           )
                         })}</td>
                       </tr>
@@ -172,7 +170,7 @@ const Skills = (): JSX.Element => {
 
             </table>
             <span style={{fontSize: "0.5em"}}>*1: 個人開発<br />*2: 実務とインターン期間の合算</span>
-          </>
+          </div>
         )
       })
     }
