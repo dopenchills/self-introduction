@@ -6,7 +6,7 @@ import './index.scss'
 import LowerContainer from "../components/LowerContainer"
 import UpperContainer from "../components/UpperContainer"
 import PreferencesContextProvider, { PreferenceContext } from "../components/contexts/Preference"
-import BackgroundSvg from "../components/BackgroundSvg"
+import Background from "../components/Background"
 import MenuPane from "../components/MenuPane"
 import TopLevelContext from "../components/contexts/TopLevel"
 import SEO from "../components/SEO"
@@ -35,7 +35,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   <UpperContainer />
                   <LowerContainer />
                 </div>
-                <BackgroundSvg className="background" />
+                <Background className="background" />
                 <MenuPane className="menu-pane-index" />
             </div>    
             )
