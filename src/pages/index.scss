@@ -71,19 +71,6 @@
 #upper-container {
   // flexbox-children
   flex-basis: content;
-
-  // flexbox-parent
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: space-between;
-  gap: 0;
-
-  .flex-item {
-    flex-basis: content;
-  }
 }
 
 #preference-icon-list {
