@@ -8,8 +8,10 @@
     }
   
   padding: 2.5em;
+  border-radius: responsive.$border-radius-pc;
   @media (max-width: responsive.$responsive-sp-lteq) {
-    padding: 0.5em;    
+    padding: 0.5em;
+    border-radius: responsive.$border-radius-sp;
   }
 }
 

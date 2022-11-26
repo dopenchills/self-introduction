@@ -13,6 +13,22 @@
 }
 
 .menu-option {
+  &:first-of-type {
+    overflow: hidden;
+    border-radius: responsive.$border-radius-pc responsive.$border-radius-pc 0 0;
+    @media (max-width: responsive.$responsive-sp-lteq) {
+      border-radius: responsive.$border-radius-sp responsive.$border-radius-sp 0 0;
+    }
+  }
+
+  &:last-of-type {
+    overflow: hidden;
+    border-radius: 0 0 responsive.$border-radius-pc responsive.$border-radius-pc;
+    @media (max-width: responsive.$responsive-sp-lteq) {
+      border-radius: 0 0 responsive.$border-radius-sp responsive.$border-radius-sp;
+    }
+  }
+
   input {
     display: none;
   }

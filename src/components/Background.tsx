@@ -1,8 +1,9 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image";
 import { PreferenceContext } from "./contexts/Preference";
 
 // svg
-import Background from '-!svg-react-loader?name=Background!../assets/Background.svg'
+import BackgroundObjectsOnGround from '-!svg-react-loader?name=Background!../assets/Background.svg'
 import CloudBig from '-!svg-react-loader?name=Background!../assets/CloudBig.svg'
 import CloudMedium from '-!svg-react-loader?name=Background!../assets/CloudMedium.svg'
 import CloudSmall from '-!svg-react-loader?name=Background!../assets/CloudSmall.svg'
@@ -13,7 +14,7 @@ import CloudMediumDark from '-!svg-react-loader?name=Background!../assets/CloudM
 import CloudSmallDark from '-!svg-react-loader?name=Background!../assets/CloudSmallDark.svg'
 
 // scss
-import './BackgroundSvg.scss'
+import './Background.scss'
 
 
 const Clouds = (): JSX.Element => {
@@ -91,20 +92,44 @@ const ObjectsOnGround = (): JSX.Element => {
     <>
     {
       isLightMode ?
-        <Background {...commonProps} /> :
+        <BackgroundObjectsOnGround {...commonProps} /> :
         <BackgroundDark {...commonProps} />
      }
     </>
   )
 }
 
-const BackgroundSvg = (props: {className?: string}): JSX.Element => {
+const Background = (props: {className?: string}): JSX.Element => {
+  const { isLightMode } = React.useContext(PreferenceContext)
+
+  const leaves = Array(3).fill(
+    <div className="falling">
+      <StaticImage
+        src="../images/Leaf.png"
+        alt="leaf"
+        className="flipping-leaf"
+        placeholder="blurred"
+      />
+    </div>
+  )
+
   return (
     <div className={`background-div ${props.className}`}>
+      <svg height={0}>
+        <filter id="fe-blur">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+        </filter>
+      </svg>
       <Clouds />
       <ObjectsOnGround />
+      { 
+        isLightMode &&  
+          <div className="leaves">
+            {leaves}
+          </div>        
+      }
     </div>
   )
 }
 
-export default BackgroundSvg
+export default Background
