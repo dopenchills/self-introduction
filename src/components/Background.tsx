@@ -104,14 +104,18 @@ const Leaves = (): JSX.Element => {
     <div className="leaves">
       {
         Array(3).fill(
-          <div className="falling">
-            <StaticImage
-              src="../images/Leaf.png"
-              alt="leaf"
-              className="flipping-leaf"
-              placeholder="blurred"
-            />
-          </div>
+          [1, 2, 3].map(i => {
+            return (
+              <div className="falling" key={i}>
+                <StaticImage
+                  src="../images/Leaf.png"
+                  alt="leaf"
+                  className="flipping-leaf"
+                  placeholder="blurred"
+                />
+            </div>  
+            )
+          })
         )
       }
     </div>
