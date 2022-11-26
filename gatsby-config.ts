@@ -25,7 +25,33 @@ const config: GatsbyConfig = {
         "icon": "src/images/icon.svg"
       }
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            }
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -67,12 +93,6 @@ const config: GatsbyConfig = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown-pages`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-autolink-headers`],
       },
     },
   ]
