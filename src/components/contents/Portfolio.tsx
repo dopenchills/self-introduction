@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Portfolio = (): JSX.Element => {
   const data = useStaticQuery(graphql`
-    query ArticleQuery {
-      markdownRemark(frontmatter: {title: {eq: "自己紹介サイト"}}) {
+    query PortfolioArticleQuery {
+      markdownRemark(frontmatter: {key: {eq: "portfolio-self-introduction"}}) {
         frontmatter {
           title
         }
