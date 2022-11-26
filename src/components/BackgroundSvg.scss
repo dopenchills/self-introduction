@@ -32,6 +32,58 @@
       transform: translateX(100vw);
     }
   }
+
+  .leaves {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+    .falling {
+      position: absolute;
+      transform: translate(-100%, -100%);
+      
+      animation: var(--duration, 120s) linear var(--delay, 120s) infinite normal falling;
+      @keyframes falling {
+        from {
+          transform: translate(var(--x-start, -100%), -100%);
+        }
+        15%, to {
+          transform: translate(calc(var(--x-start, 100%) + 500%), 100vh);
+        }
+      }
+      &:nth-of-type(1) {
+        --x-start: -200%;
+        --delay: 0s;
+        --duration: 120s;
+        --flip-duration: 1s;
+      }
+      &:nth-of-type(2) {
+        --x-start: -300%;
+        --delay: 122s;
+        --duration: 122s;
+        --flip-duration: 1.1s;
+      }
+      &:nth-of-type(3) {
+        --x-start: -400%;
+        --delay: 118s;
+        --duration: 118s;
+        --flip-duration: 0.9s;
+      }
+    }
+    .flipping-leaf {
+      animation: var(--flip-duration, 1s) linear 0s infinite alternate flipping;
+      width: 5%;
+  
+      @keyframes flipping {
+        from {
+          transform: scaleX(1);
+        }
+        to {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
 }
 
 

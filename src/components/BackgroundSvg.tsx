@@ -1,4 +1,5 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image";
 import { PreferenceContext } from "./contexts/Preference";
 
 // svg
@@ -99,10 +100,29 @@ const ObjectsOnGround = (): JSX.Element => {
 }
 
 const BackgroundSvg = (props: {className?: string}): JSX.Element => {
+  const { isLightMode } = React.useContext(PreferenceContext)
+
+  const leaves = Array(3).fill(
+    <div className="falling">
+      <StaticImage
+        src="../images/Leaf.png"
+        alt="leaf"
+        className="flipping-leaf"
+        placeholder="blurred"
+      />
+    </div>
+  )
+
   return (
     <div className={`background-div ${props.className}`}>
       <Clouds />
       <ObjectsOnGround />
+      { 
+        isLightMode &&  
+          <div className="leaves">
+            {leaves}
+          </div>        
+      }
     </div>
   )
 }
