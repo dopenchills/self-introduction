@@ -170,3 +170,42 @@ Github Actions上に**CI/CDパイプライン**を構築しました。main, stg
 CSSに関する知識不足が目立ったので、これからは体系的にCSSについて勉強していきたいと考えています。
 
 また自分はバックエンドも扱えるということを示せるような作品も作りたいと思います。
+
+## 追記
+
+上に書いたこの方法は効果がありました。
+
+> - 段階的に原因を特定するようにする
+>   - まずバグの原因となった**コミット**を特定する
+>   - 次にバグの原因となった**行**を特定する
+>   - 次にバグの**原因**を特定する
+
+バグの原因となったコミットを見つけてからバグを修正するまで、たった10分程度で行うことができました。以下にその概要を残したいと思います。
+
+本サイトにはスクロールに関するバグがありました。
+
+まずバグが再現できるコミットと、そうでないコミットを洗い出しました。
+
+> バグなし  
+> 1c18584 - (HEAD) Merge branch 'dev' into stg (2 days ago) <dopenchills>  
+> e5739a7 - (HEAD) feat: add ssl (2 days ago) <dopenchills>  
+> a961aab - (HEAD) fix: unstable behavior on tap device (2 days ago) <dopenchills>  
+> 732aca5 - (HEAD) style: add my own favicon (2 days ago) <dopenchills>  
+> 1a1f969 - (HEAD) fix: bug that there is no animation on ContentsContainer rerender (2 days ago)  
+> d8eeda6 - (HEAD) fix: warning with clouds that did not have keys (2 days ago)  
+> 6684d5b - fix: scrollToView unstable behavior (2 days ago) <dopenchills>  
+>   
+> バグあり  
+> 2b530cd - (HEAD) feat: add falling leaves (28 hours ago) <dopenchills>  
+
+以下のコマンドでバグ発生前後の差分を探しました。
+
+```
+git diff 1c18584..2b530cd
+```
+
+コード上の気になる箇所を修正し、Staging環境でバグが修正されていることを確認しました。
+
+以上の経験から、闇雲に修正するよりも、コミットを絞り込んでいった方がいいことが実感できました。
+
+またバグの発生箇所を特定するために、コミットの粒度を小さくし、コミットメッセージに意味をこめることの重要さを再確認しました。
