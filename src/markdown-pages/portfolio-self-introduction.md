@@ -186,17 +186,19 @@ CSSに関する知識不足が目立ったので、これからは体系的にCS
 
 まずバグが再現できるコミットと、そうでないコミットを洗い出しました。
 
-> バグなし  
-> 1c18584 - (HEAD) Merge branch 'dev' into stg (2 days ago) <dopenchills>  
-> e5739a7 - (HEAD) feat: add ssl (2 days ago) <dopenchills>  
-> a961aab - (HEAD) fix: unstable behavior on tap device (2 days ago) <dopenchills>  
-> 732aca5 - (HEAD) style: add my own favicon (2 days ago) <dopenchills>  
-> 1a1f969 - (HEAD) fix: bug that there is no animation on ContentsContainer rerender (2 days ago)  
-> d8eeda6 - (HEAD) fix: warning with clouds that did not have keys (2 days ago)  
-> 6684d5b - fix: scrollToView unstable behavior (2 days ago) <dopenchills>  
->   
-> バグあり  
-> 2b530cd - (HEAD) feat: add falling leaves (28 hours ago) <dopenchills>  
+```
+# バグなし
+1c18584 - (HEAD) Merge branch 'dev' into stg (2 days ago) <dopenchills>  
+e5739a7 - (HEAD) feat: add ssl (2 days ago) <dopenchills>  
+a961aab - (HEAD) fix: unstable behavior on tap device (2 days ago) <dopenchills>  
+732aca5 - (HEAD) style: add my own favicon (2 days ago) <dopenchills>  
+1a1f969 - (HEAD) fix: bug that there is no animation on ContentsContainer rerender (2 days ago)  
+d8eeda6 - (HEAD) fix: warning with clouds that did not have keys (2 days ago)  
+6684d5b - fix: scrollToView unstable behavior (2 days ago) <dopenchills>  
+  
+# バグあり  
+2b530cd - (HEAD) feat: add falling leaves (28 hours ago) <dopenchills>  
+```
 
 以下のコマンドでバグ発生前後の差分を探しました。
 
