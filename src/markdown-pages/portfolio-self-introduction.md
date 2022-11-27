@@ -38,18 +38,18 @@ Webサイト制作の流れは以下の通りです。
 
 #### 技術選定の基準
 
-技術選定の第一の基準は「広く使われていること」でした。そのような技術は就職先で活用できる可能性が高く、また独学でも不明点を解決しやすいと考えました。
+技術選定の第一の基準は「広く使われていること」です。そのような技術は就職先で活用できる可能性が高く、また独学でも不明点を解決しやすいと思うからです。
 
-技術選定の第二の基準は「処理速度が速いこと」でした。処理の重いサイトはユーザにストレスをかけてしまいます。また処理の速さはエンジニアの技術力と強く相関すると思うため、採用担当者の方からの評価していただけると考えました。
+技術選定の第二の基準は「処理速度が速いこと」です。処理の重いサイトはユーザにストレスをかけてしまいます。また処理速度はエンジニアの技術力と強く相関すると思うため、採用担当者の方からの評価していただけると考えました。
 
 
 #### 言語の選定
 
 [TypeScript](https://www.typescriptlang.org/)を採用しました。
 
-[Stackoverflowのサーベイ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe-prof:~:text=48.07%25-,TypeScript,-34.83%25)によると、フロントエンドの言語として、TypeScriptはJavaScriptとHTML/CSSに次ぐ3位の人気があり、広く使われています。処理速度に関しては、コンパイル後にJavaScriptになるため、JavaScriptと同じ速度だと考えられます。
+[Stackoverflowのサーベイ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe-prof:~:text=48.07%25-,TypeScript,-34.83%25)によると、フロントエンドの言語として、TypeScriptはJavaScript, HTML/CSSに次ぐ3位の人気があり、広く使われています。処理速度に関しては、コンパイル後にJavaScriptになるため、JavaScriptと同じ速度だと考えられます。
 
-また型チェックのあるTypeScriptを使うことで、JavaScriptを直接書くよりもバグを減らすことができると考えました。またIDEによる補完機能が充実しているため、開発体験も向上すると考えました。
+また型チェックのあるTypeScriptを使うことで、JavaScriptを直接書くよりもバグを減らすことができます。IDEによる補完機能も充実しているため、開発体験も向上します。
 
 処理速度の速いWebAssemblyを一部導入することも検討しました。しかしTypeScriptほど広く使われているわけではないうえ、重たい処理を行うわけではないので今回は採用しないこととしました。
 
@@ -58,7 +58,7 @@ Webサイト制作の流れは以下の通りです。
 
 [Gatsby.js](https://www.gatsbyjs.com/)を採用しました。Gatsby.jsはReact.jsをベースとするStatic Site Generatorです。
 
-[React.js](https://reactjs.org/)は[2022年現在、最も広く使われているユーザーインターフェース構築ライブラリ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe:~:text=Node.js%20and%20React.js%20are%20the%20two%20most%20common%20web%20technologies%20used%20by%20Professional%20Developers)です。React.jsの強みはDOMの差分のみを更新することで効率よくページをレンダリングできることです。これは第二の要件である「処理速度が速いこと」に直結します。
+[React.js](https://reactjs.org/)は[2022年現在、最も広く使われているユーザーインターフェース構築ライブラリ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe:~:text=Node.js%20and%20React.js%20are%20the%20two%20most%20common%20web%20technologies%20used%20by%20Professional%20Developers)です。React.jsの強みはDOMの差分のみを更新することで効率よくページをレンダリングできることであり、これは第二の要件である「処理速度が速いこと」に直結します。
 
 さらにGatsby.jsを使うことでページを事前にコンパイルできるので、サイトの読み込み速度を向上させることができます。
 
@@ -102,7 +102,7 @@ Figmaで以下のようなデザインを制作しました。
 
 実装の際に心掛けていたことは、**関数型コンポーネントを利用すること**です。クラス型コンポーネントよりも関心の分離が容易であるためです。
 
-クラス型コンポーネントは`componentDidMount`や`componentDidUpdate`などのライフサイクルメソッドによってコードを書く必要があります。関数型コンポーネントでは[Hooks](https://reactjs.org/docs/hooks-intro.html)でライフサイクルメソッドを置き換え、関心によってコードを分離することができるようになります。
+クラス型コンポーネントは`componentDidMount`や`componentDidUpdate`などのライフサイクルメソッドによってコードを書く必要があります。一方、関数型コンポーネントでは[Hooks](https://reactjs.org/docs/hooks-intro.html)でライフサイクルメソッドを置き換え、関心によってコードを分離することができるようになります。
 
 また関数型コンポーネントではコードが短く書けます。メソッドをbindする必要もなく、コンストラクタも不要であるためです。
 
@@ -113,13 +113,13 @@ Figmaで以下のようなデザインを制作しました。
 
 #### その他の作業
 
-Github Actions上に**CI/CDパイプライン**を構築しました。main, stg, devの3つのブランチを作り、以下の運用をできるようにしました。
+Github Actions上に**CI/CDパイプライン**を構築しました。main, stg, devの3つのブランチを作り、以下のように運用しました。
 
 - stgにプッシュすると「単体テスト」と「Staging環境へのデプロイ」が走る
 - Staging環境で動作を確認する
 - mainにプルリクエストを出し、マージすると「本番環境へのデプロイ」が走る
 
-また以下のような作業も行いました。
+また以下の作業も行いました。
 
 - ドメインの取得
 - CDNの設定
@@ -129,7 +129,7 @@ Github Actions上に**CI/CDパイプライン**を構築しました。main, stg
 
 ## 困難を感じたポイント
 
-**CSSのデバッグ**に多くの時間をかけてしまいました。プロパティの変更やコンポーネントの追加によって思いもよらない場所に影響が出るためです。
+**CSSのデバッグ**に多くの時間をかけてしまいました。プロパティの変更などにより、思いもよらない場所に影響が出るためです。
 
 今回の失敗をもとに、今後は以下のように改善したいと思います。
 
@@ -139,7 +139,7 @@ Github Actions上に**CI/CDパイプライン**を構築しました。main, stg
   - 次にバグの原因となった**行**を特定する
   - 次にバグの**原因**を特定する
 
-また[**PCとスマートフォンで異なる挙動となること**](https://w3reign.com/double-tapclick-issue-on-iosiphone-ipad-devices-solved/)を知らず、多くの時間をかけてしまいました。当時は自分のコードが原因なのか、一般的に起きている現象なのかを判断できませんでした。
+また[**PCとスマートフォンで異なる挙動となること**](https://w3reign.com/double-tapclick-issue-on-iosiphone-ipad-devices-solved/)を知らず、バグの原因特定に多くの時間をかけてしまいました。当時は自分のコードが原因なのか、一般的に起きている現象なのかを判断できませんでした。
 
 今後は、バグの挙動を具体的に言語化して検索することで、一般的に起きている現象かどうかを早い段階で理解できるように心掛けたいと思います。
 
