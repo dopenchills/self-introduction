@@ -4,89 +4,169 @@ date: "2022-11-24"
 title: "自己紹介サイト"
 ---
 
-この自己紹介サイトを制作いたしました。
+エンジニア採用担当の方に向けて、この自己紹介サイトを制作しました。
 
-### こだわった点
+## 目的
 
-#### Webサイトのパフォーマンス
+目的は、成果物をもとに自分をアピールすることです。自分は実務経験に乏しいため、経歴でのアピールができませんでした。
 
--   React.jsを採用し、DOM要素を素早く更新できるようにしました
--   Gatsby.jsを採用し、初回読み込み速度の向上を狙いました
+またWebサイト制作を通じてフロントエンドの知識を身につけることも意識していました。
 
-#### アクセシビリティ
+## 方法
 
--   [Web Content Accessibility Guidelines (WCAG) 2](https://www.w3.org/TR/WCAG20/#:~:text=1.4.3%20Contrast%20(Minimum)%3A%20The%20visual%20presentation%20of%20text%20and%20images%20of%20text%20has%20a%20contrast%20ratio%20of%20at%20least%204.5%3A1%2C%20except%20for%20the%20following%3A%20(Level%20AA))をもとに文字色を選びました
--   FunkifyというGoogle Chromeの拡張機能を用い、アクセシビリティに関する問題をテストしました
+Webサイト制作の流れは以下の通りです。
 
-#### ユーザエクスペリエンス
+1. 勉強
+2. デザイン
+3. 技術選定
+4. 開発
 
-ユーザが心地よく感じられるように心がけました。
+また開発工程では以下のような作業を行いました。
 
--   統一感のある色づかい
--   優しい自然を感じられる背景
--   丸みのあるコンポーネント
--   適度な速度のトランジション
-        - ダークモードへの切り替え速度
-        - 画面の切り替わりの速度
+- 実装
+- 細かい作業
+    - テスト
+    - CI/CDの設定
+    - ドメインの取得
+    - CDNの設定
+    - SSL化
+    - OGPタグ設定
 
-### 楽しかった点
+以下では各工程の内容について述べたいと思います。
 
-#### HTML, JavaScript, TypeScriptの体系的な勉強
+### 技術選定
 
-体系的な勉強をすることにより、今まで何となく書いていたコードを正しく理解できるようになりました。
+#### 技術選定の基準
 
-以下の資料を用いて勉強しました。
+技術選定の第一の基準は「広く使われていること」でした。そのような技術は就職先で活用できる可能性が高く、また独学でも不明点を解決しやすいと考えました。
 
+技術選定の第二の基準は「処理速度が速いこと」でした。処理の重いサイトはユーザにストレスをかけてしまいます。また処理の速さはエンジニアの技術力と強く相関すると思うため、採用担当者の方からの評価していただけると考えました。
+
+
+#### 言語の選定
+
+[TypeScript](https://www.typescriptlang.org/)を採用しました。
+
+[Stackoverflowのサーベイ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe-prof:~:text=48.07%25-,TypeScript,-34.83%25)によると、フロントエンドの言語として、TypeScriptはJavaScriptとHTML/CSSに次ぐ3位の人気があり、広く使われています。処理速度に関しては、コンパイル後にJavaScriptになるため、JavaScriptと同じ速度だと考えられます。
+
+また型チェックのあるTypeScriptを使うことで、JavaScriptを直接書くよりもバグを減らすことができると考えました。またIDEによる補完機能が充実しているため、開発体験も向上すると考えました。
+
+処理速度の速いWebAssemblyを一部導入することも検討しました。しかしTypeScriptほど広く使われているわけではないうえ、重たい処理を行うわけではないので今回は採用しないこととしました。
+
+
+#### フレームワークの選定
+
+[Gatsby.js](https://www.gatsbyjs.com/)を採用しました。Gatsby.jsはReact.jsをベースとするStatic Site Generatorです。
+
+[React.js](https://reactjs.org/)は[2022年現在、最も広く使われているユーザーインターフェース構築ライブラリ](https://survey.stackoverflow.co/2022/#most-popular-technologies-webframe:~:text=Node.js%20and%20React.js%20are%20the%20two%20most%20common%20web%20technologies%20used%20by%20Professional%20Developers)です。React.jsの強みはDOMの差分のみを更新することで効率よくページをレンダリングできることです。これは第二の要件である「処理速度が速いこと」に直結します。
+
+さらにGatsby.jsを使うことでページを事前にコンパイルできるので、サイトの読み込み速度を向上させることができます。
+
+処理速度に強みのあるSvelte.jsも検討したのですが、まだ広く使われている段階ではなかったので今回は採用しないこととしました。
+
+
+### 勉強
+
+Webサイト制作の基礎から勉強しました。信頼できるドキュメントから体系的に学ぶことを心がけました。
+
+-   [Learn Design with Figma](https://www.figma.com/resources/learn-design/)
 -   [HTML elements reference - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 -   [JavaScript Guide - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 -   [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+-   [React.js MAIN CONCEPTS](https://reactjs.org/docs/hello-world.html)
+-   [Tutorial | Gatsby](https://www.gatsbyjs.com/docs/tutorial/)
 
-### 大変だった点
 
-#### 読みやすいデザインの探索
+### デザイン
 
-自分でCSSを設定すると不格好になってしまい、デザインの難しさを感じました。
+#### 方針決定
 
-フォントサイズを小さくするとオシャレに見えるのですが読みづらく、 フォントサイズを大きくすると多少読みやすくなるものの、不格好になってしまいます。
+他の方のポートフォリオサイトを調査しました。特に[Keita Yamadaさんのサイト](https://p5aholic.me/)の名刺型のデザインは自己紹介にピッタリだと思い、採用することにしました。
 
-自分が読みやすいと思う既存のサイト([notion.so](https://notion.so/)や[note.com](https://note.com/))を分析することで改善していきました。
+![デザインリサーチ](./portfolio-self-introduction/design-research.png)
 
-#### CSSのデバッグ
+![Keita Yamadaさんのサイト](./portfolio-self-introduction/keita-yamada-portfolio.png)
 
-思った通りにCSSが書けずに苦労しました。 そもそもCSSのプロパティをあまり知らなかったので、検索もデバッグも効率的にできませんでした。 今後はCSSに関する知識をつけていきたいと考えています。
+また自分の個性として、自然を感じられる温かみのあるサイトを作ることを決めました。
 
-### 使用した技術
+#### デザイン制作
 
-#### Gatsby.js
+Figmaで以下のようなデザインを制作しました。
 
-以下の理由からGatsby.jsを採用しました。
+![自分のデザイン](./portfolio-self-introduction/my-design.png)
 
--   React.jsをベースにしているため
-    -   素早いレンダリングができる
-    -   コンポーネント単位で、関心に基づいてコードを分離できる
-    -   最も人気のあるライブラリであり、不明点を解消しやすい
--   Static Site Generationにより、React.jsよりも初回読み込み時の速度を高めることができるため
 
-実際に使ってみて、Gatsby.jsはデフォルトの機能やプラグインが充実していることに気づきました。画像の最適化、faviconの設定、OGタグの設定などがとても簡単でした。React.jsを直接扱うよりも楽だと思います。
+### 開発
 
-#### TypeScript
+#### 実装
 
-以下の理由からTypeScriptを採用しました。
+実装の際に心掛けていたことは、**関数型コンポーネントを利用すること**です。クラス型コンポーネントよりも関心の分離が容易であるためです。
 
--   IDEの恩恵を受けることができるため
-    -   コードを書いた瞬間に型に関するエラーが検知される
-    -   コード補完が効きやすい
--   バックエンドも同一の言語で書くことができるため
+クラス型コンポーネントは`componentDidMount`や`componentDidUpdate`などのライフサイクルメソッドによってコードを書く必要があります。関数型コンポーネントでは[Hooks](https://reactjs.org/docs/hooks-intro.html)でライフサイクルメソッドを置き換え、関心によってコードを分離することができるようになります。
 
-#### SCSS
+また関数型コンポーネントではコードが短く書けます。メソッドをbindする必要もなく、コンストラクタも不要であるためです。
 
-以下の理由からSCSSを採用しました。
+他に心掛けていたのは、**CSSには積極的にコメントを残すということ**です。CSSでは個々のプロパティの役割が不明確になりがちなので、コメントで補足したり、似たプロパティをまとめるなどの工夫をしました。
 
--   ネストを使って読みやすく書ける
--   モジュールを使うことでコードを共通化できる
--   学習コストが低い
+[本サイトのソースコード](https://github.com/dopenchills/self-introduction)はGithubで公開しています。
 
-#### その他使用技術
 
--   AWS S3: 静的サイトのホスティング
--   AWS Route 53: ドメインの登録・DNSレコードの管理
+#### その他の作業
+
+Github Actions上に**CI/CDパイプライン**を構築しました。main, stg, devの3つのブランチを作り、以下の運用をできるようにしました。
+
+- stgにプッシュすると「単体テスト」と「Staging環境へのデプロイ」が走る
+- Staging環境で動作を確認する
+- mainにプルリクエストを出し、マージすると「本番環境へのデプロイ」が走る
+
+また以下のような作業も行いました。
+
+- ドメインの取得
+- CDNの設定
+- SSL化
+- OGPタグ設定
+
+
+## 困難を感じたポイント
+
+**CSSのデバッグ**に多くの時間をかけてしまいました。プロパティの変更やコンポーネントの追加によって思いもよらない場所に影響が出るためです。
+
+今回の失敗をもとに、今後は以下のように改善したいと思います。
+
+- CSSについて体系的に勉強し、バグの原因となるようなコードを書かないようにする
+- 段階的に原因を特定するようにする
+  - まずバグの原因となった**コミット**を特定する
+  - 次にバグの原因となった**行**を特定する
+  - 次にバグの**原因**を特定する
+
+また[**PCとスマートフォンで異なる挙動となること**](https://w3reign.com/double-tapclick-issue-on-iosiphone-ipad-devices-solved/)を知らず、多くの時間をかけてしまいました。当時は自分のコードが原因なのか、一般的に起きている現象なのかを判断できませんでした。
+
+今後は、バグの挙動を具体的に言語化して検索することで、一般的に起きている現象かどうかを早い段階で理解できるように心掛けたいと思います。
+
+
+## アピールポイント
+
+自然と温もりを感じてもらえるよう、スタイルを工夫しました。
+
+- 緑と青を基調とした統一感のある色使い
+- "優しい"スタイル
+  - 丸みのあるコンポーネント
+  - 背景に適用した`<feGaussianBlur>`タグ
+- 穏やかなアニメーション
+  - ゆっくり流れる雲
+  - たまに映り込む葉っぱ
+  - 穏やかな画面切り替え
+  - 穏やかな押下アニメーション (ダークモード切り替えなど)
+
+またアクセシビリティを向上させる工夫もしました。
+
+- [Web Content Accessibility Guidelines (WCAG) 2](https://www.w3.org/TR/WCAG20/#:~:text=1.4.3%20Contrast%20(Minimum)%3A%20The%20visual%20presentation%20of%20text%20and%20images%20of%20text%20has%20a%20contrast%20ratio%20of%20at%20least%204.5%3A1%2C%20except%20for%20the%20following%3A%20(Level%20AA))をもとにした色選び
+- ダークモードの導入
+
+## 感想
+
+改善点は多くあるものの、個人的には満足しています。見ていて穏やかな気持ちになれると思うためです。
+
+CSSに関する知識不足が目立ったので、これからは体系的にCSSについて勉強していきたいと考えています。
+
+また自分はバックエンドも扱えるということを示せるような作品も作りたいと思います。
