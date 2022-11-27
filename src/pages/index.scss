@@ -10,7 +10,7 @@
   overflow: hidden;
 
   // stack background and whole-container
-  position: relative;
+  position: fixed;
 
   color: color.$text-color-light;
   background: linear-gradient(to left top, color.$sky-color-light, color.$whitish-color-light);
