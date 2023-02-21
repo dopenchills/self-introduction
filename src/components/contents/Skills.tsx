@@ -55,7 +55,7 @@ const Skills = (): JSX.Element => {
       skills: [
           {
             name: <>HTML, CSS, Java<wbr/>Script</>,
-            year_including_hobby: "1.5年",
+            year_including_hobby: "4年",
             year_including_intern: "1年",
             products: ["Webサイト制作"]
           },
