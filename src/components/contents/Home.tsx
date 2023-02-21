@@ -18,11 +18,11 @@ const Home = (): JSX.Element => {
   return (
     <article className="home">
       <StaticImage
-        src="../../images/profile-image.jpeg"
+        src="../../images/profile-image.png"
         alt="my profile image"
         quality={100}
-        width={300}
-        height={300}
+        width={310}
+        height={310}
         className="profile-image"
         placeholder="blurred"
       />
