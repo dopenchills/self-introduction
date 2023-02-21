@@ -18,7 +18,7 @@ const Home = (): JSX.Element => {
   return (
     <article className="home">
       <StaticImage
-        src="../../images/profile-image.jpeg"
+        src="../../images/profile-image.png"
         alt="my profile image"
         quality={100}
         width={300}
